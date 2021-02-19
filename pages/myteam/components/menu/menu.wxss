@@ -1,0 +1,20 @@
+/* pages/myteam/components/menu/menu.wxss */
+.flex-direction-row {
+  flex-direction: row;
+}
+
+ .bg-yellow{
+  background-color: #fbff0a;
+}
+
+.team-radius-20 {
+	border-radius: 20rpx;
+}
+
+.team-radius-15 {
+	border-radius: 15rpx;
+}
+
+.text-50 {
+	font-size: 50rpx;
+}

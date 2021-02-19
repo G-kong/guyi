@@ -1,0 +1,14 @@
+<!--pages/question/question.wxml-->
+<cu-custom bgColor="an-head text-white" isBack="{{true}}"><view slot="backText">常见问题</view></cu-custom>
+<view class="home-page flex flex-direction">
+
+  <view class="flex bg-white solids-top">
+    <view class="flex text-xl margin-xs padding-xs">
+      <text class="cuIcon-title lg text-gray"></text>
+    </view>
+    <view class="flex flex-treble margin-sm text-left align-center" wx:for="{{array}}" wx:key="index" wx:if="{{idx == item.id}}">
+      {{item.answer}}
+    </view>
+  </view>
+
+</view>

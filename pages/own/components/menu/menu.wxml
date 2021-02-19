@@ -1,0 +1,31 @@
+<!--pages/own/components/menu/menu.wxml-->
+<view class="flex flex-direction padding-top-sm ">
+
+  <view class="flex align-center padding-tb-lg padding-lr-lg text-black bg-white" bindtap="goToQuestion">
+    <text class="icon-img sm-xs icon-ask"></text>
+    <view class="flex-sub padding-lr text-lg text-left">
+      常见问题
+    </view>
+    <text class="cuIcon-right lg text-gray"></text>
+  </view>
+  <button hover-class="none"
+          show-message-card
+          send-message-title="{{contact.sendMessageTitle}}"
+          send-message-img="{{contact.sendMessageImg}}"
+          send-message-path="{{contact.sendMessagePath}}"
+          open-type='contact'
+          class="flex align-center padding-tb-lg padding-lr-lg text-black bg-white">
+    <text class="icon-img sm-xs icon-service"></text>
+    <view class="flex-sub padding-lr text-lg text-left">
+      召唤客服
+    </view>
+    <text class="cuIcon-right lg text-gray"></text>
+  </button>
+  <view wx:if="{{isMainMiniApp}}" class="flex align-center padding-tb-lg padding-lr-lg text-black bg-white" >
+    <text class="icon-img sm-xs icon-wechat"></text>
+    <view class="flex-sub padding-lr text-lg text-left">
+      关注公众号
+    </view>
+    <text class="cuIcon-right lg text-gray"></text>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+.eleme-page{
+  background-color: #027DD8;
+}
+.meituan-page{
+  background-color: #FDC413;
+}
+.top-img {
+  width: 100vw;
+  /* height: auto; */
+  line-height: 0rpx;
+  display: -webkit-box;
+}
+.fenge-img {
+  width: 100vw;
+  /* height: auto; */
+  line-height: 0rpx;
+  display: -webkit-box;
+}
+.form-row {
+  width: 100%;
+  height: 72rpx;
+  background-color: #FFFFFF;
+  border-radius: 6rpx;
+  overflow: hidden;
+  will-change: transform;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.form-row .input {
+  width: 100%;
+  height: 100%;
+}
+
+.form-row .input input {
+  width: 100%;
+  height: 100%;
+  border: 0rpx;
+  line-height: 72rpx;
+  background-color: none;
+  outline: none;
+  padding: 0 20rpx;
+
+}
+
+.form-row .input input::-webkit-input-placeholder {
+  color: #E0E0E0;
+  height: 100%;
+  line-height: 72rpx;
+  /*transform: translate(0, 1.5px);*/
+}
+
+.form-row .input input:focus {
+  outline: none;
+}
+
+.form-row .input input:focus {
+  outline: none;
+}
+
+.form-row .btn-sms {
+  height: 100%;
+  color: #454545;
+  background-color: #DCDCDC;
+  padding: 0 20rpx;
+}
+
+.form-row .btn-sms.disabled {
+  color: #828282;
+
+}
+
+.form-btns .btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border-radius: 36rpx;
+  padding: 0 60rpx;
+  color: #FFFFFF;
+  background: linear-gradient(to bottom, #FF982D 0%, #FB682E 50%, #F6462F 100%);
+
+}
+
+.form-btns .btn-submit.disabled {
+  color: #454545;
+  background: linear-gradient(to bottom, #E1E1E1 0%, #D3D3D3 50%, #C5C5C5 100%);
+
+}
+
+
+.width-full{
+  width: 100%;
+}
+.width-vfull{
+  width: 100vw;
+}

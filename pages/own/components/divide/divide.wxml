@@ -1,0 +1,11 @@
+<!--pages/own/components/divide/divide.wxml-->
+<view class="divide-frame flex padding-lr-lg margin-top  ">
+  <view class="divide-container flex align-center justify-center bg-black padding-sm " bindtap="goToDivide">
+    <view class="divide-text cuIcon-recharge text-yellow "></view>
+    <view class="flex-sub text-yellow padding-left-sm">平台股东每日分红</view>
+    <view class="text-sm">
+      查看
+      <text class="cuIcon-right lg"></text>
+    </view>
+  </view>
+</view>

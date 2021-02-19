@@ -1,0 +1,6 @@
+<!--pages/index/components/head/head.wxml-->
+
+<div class="home-head flex flex-direction ">
+  <div class="bg-img home-head-body" />
+  <div class="bg-img home-head-bottom" />
+</div>

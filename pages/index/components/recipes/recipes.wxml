@@ -1,0 +1,18 @@
+<!--pages/index/components/recipes/recipes.wxml-->
+<view class="recipes-frame flex flex-direction align-center justify-center padding-tb-sm padding-lr-lg margin-top-sm ">
+    <view class="width-full flex flex justify-between">
+        <view class="text-bold" >美食食谱</view>
+        <view class="flex align-center text-gray" bindtap="goToRecipe">
+            <view>全部{{total}}篇</view>
+            <view class="cuIcon-right"></view>
+        </view>
+    </view>
+    <view class="flex recipes-list padding-top-xs">
+        <view wx:key="index" wx:for="{{items}}" 
+                class="recipes-item flex flex-direction align-center justify-center padding-right-sm"  
+                data-id="{{item.id}}" data-title="{{item.title}}"  bindtap="goToDetails">
+            <view class="recipes-avatar  cu-avatar" style="background-image:url({{ item.pic }});"></view>
+            <view class="recipes-name text-xs text-cut padding-top-xs">{{ item.title }}</view>
+        </view>
+    </view>
+</view>

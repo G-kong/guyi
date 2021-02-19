@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "com-item":"./components/item/item"
+  },
+  "navigationBarBackgroundColor": "#ea3855",
+  "navigationStyle": "custom"
+}

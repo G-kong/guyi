@@ -1,0 +1,30 @@
+<!--pages/index/components/item/item.wxml-->
+<view wx:key="index" wx:for="{{items}}" wx:if="{{ index < showIndex }}"
+  class="redbag-item flex align-center justify-center padding-left-lg margin-top-sm {{item.class}} " >
+  <view class="flex-sub flex flex-direction align-start justify-center padding-left-xl">
+    <view class="text-lg text-bold">
+      {{ item.title }}
+    </view>
+    <view class="flex align-end margin-top-xs">
+      <view class="text-red text-xxl text-bold">
+        {{ item.redpacket }}
+      </view>
+      <view class="item-unit text-red margin-left-xs">
+        元
+      </view>
+      <view class="item-num padding-lr-xs margin-left-xs">
+        {{ item.descr }}
+      </view>
+    </view>
+  </view>
+  <view class="cutting_line_frame">
+    <view class="cutting_line" />
+    <view class="round top" />
+    <view class="round bottom" />
+  </view>
+  <view class="item-btns flex align-center justify-center">
+    <view class="btn text-sm text-center" data-id="{{item.id}}" data-title="{{item.title}}" data-appid="{{item.navigator.appid}}" data-path="{{item.navigator.path}}"
+      bindtap="goToGuides">免费领取</view>
+  </view>
+</view>
+<!--<view class="text-gray text-center text-xs margin-tb-sm"> 没有更多了,敬请期待 </view>-->

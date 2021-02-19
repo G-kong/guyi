@@ -1,0 +1,16 @@
+<!--pages/myteam/newpoints/newpoints.wxml-->
+<view class="newpoints-page flex flex-direction align-center">
+  <cu-custom bgColor="team-head text-white" isBack="{{true}}"><view slot="backText">团队成员数据明细</view></cu-custom>
+  <!-- <view class="bg-white text-center grid col-2" style="width: 100vw">
+    <view class="padding-lg" wx:for="{{list}}" wx:key="item" bindtap="getFriend" data-id="{{item.id}}">
+      {{item.friend}}
+      <view class='line' wx:if="{{tabCur==item.id}}"></view>
+    </view>
+  </view> -->
+  <view class="bg-white text-center grid col-2" style="width: 100vw">
+    <view class="padding-lg text-red">
+      直推好友
+    </view>
+    <view class="padding-lg">扩散好友</view>
+  </view>
+</view>

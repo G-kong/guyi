@@ -1,0 +1,14 @@
+<!--pages/index/components/item/item.wxml-->
+<view wx:key="index" wx:for="{{items}}"
+  class="recipe-item flex align-start justify-center padding-lr-lg padding-tb p margin-top-sm {{item.class}} " bindtap="goToDetails" data-id="{{item.id}}" data-title="{{item.title}}">
+  <image class="icon-img xl" src="{{item.pic}}"></image>
+  <view class="flex-sub flex flex-direction align-start justify-center padding-left-sm">
+    <view class="text-lg text-bold">
+      {{ item.title }}
+    </view>
+    <view class="item-detail text-cut-2 margin-top-xs text-gray">
+      {{ item.detail }}
+    </view>
+  </view>
+</view>
+<view class="text-gray text-center text-xs margin-tb-sm"> 没有更多了,敬请期待 </view>

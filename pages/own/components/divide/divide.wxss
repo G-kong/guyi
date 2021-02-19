@@ -1,0 +1,13 @@
+/* pages/own/components/divide/divide.wxss */
+.divide-frame{
+}
+.divide-container {
+  width: 100%;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+
+.divide-text {
+  font-size: 34rpx;
+  line-height: 36rpx;
+}

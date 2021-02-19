@@ -1,0 +1,19 @@
+<!--pages/order/index.wxml-->
+<view
+  class="order-page flex flex-direction align-center"> 
+  <view class="container flex-sub flex flex-direction">
+    <view class="item-list flex-sub">
+      <view class="flex justify-center">
+        <com-ordertotal></com-ordertotal>
+      </view>
+      <view class="flex justify-center">
+        <com-notice></com-notice>
+      </view>
+      <view> 
+        <com-orderlist></com-orderlist>
+      </view>
+    </view>
+    <com-inform></com-inform>
+    <cu-tabbar curIndex="1"></cu-tabbar>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/own/components/wallet/wallet.wxml-->
+<view class="flex padding-lr-xs">
+  <view class="flex-sub flex  flex-direction bg-white radius-ellipse  ">
+    <view class="flex padding padding-bottom-xs justify-between">
+      <view class="flex flex-direction">
+        <view class="text-df text-bold">账户余额</view>
+        <view class="flex align-center justify-start padding-top-sm">
+          <view class="text-xxl text-bold">￥{{pmcWallet.point}}</view>
+          <button class="cu-btn-detail round text-xs bg-yellow text-white button-hover" role="button" aria-disabled="false" bindtap="goToBill">
+            明细
+          </button>
+        </view>
+      </view>
+      <view>
+        <button class="cu-btn round bg-yellow button-hover" role="button" aria-disabled="false" bindtap="goToWithdraw">
+          提现
+        </button>
+      </view>
+    </view>
+    <view class="flex align-center justify-center padding padding-top-xs">
+      <view class="flex-sub flex flex-direction align-center justify-center">
+        <view class="text-df margin-bottom-xs">待入账</view>
+        <view class="text-df text-bold">￥{{pmcWallet.pointUncredited}}</view>
+      </view>
+      <view class="line bg-gray"></view>
+      <view class="flex-sub flex flex-direction align-center justify-center">
+        <view class="text-df margin-bottom-xs">已入账</view>
+        <view class="text-df text-bold">￥{{pmcWallet.pointCredited}}</view>
+      </view>
+      <view class="line bg-gray"></view>
+      <view class="flex-sub flex flex-direction align-center justify-center">
+        <view class="text-df margin-bottom-xs">累计提现</view>
+        <view class="text-df text-bold">￥{{pmcWallet.pointOut}}</view>
+      </view>
+    </view>
+  </view>
+</view>

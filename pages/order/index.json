@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "com-ordertotal": "./components/ordertotal/ordertotal",
+    "com-orderlist": "./components/orderlist/orderlist",
+    "com-notice": "./components/notice/notice",
+    "com-inform": "./components/inform/inform",
+    "cu-tabbar":"/colorui/components/cu-tabbar"
+  },
+  "navigationBarBackgroundColor": "#ea3855",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "订单"
+}

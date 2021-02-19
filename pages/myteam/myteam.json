@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "cu-custom":"/colorui/components/cu-custom",
+    "com-all":"./components/all/all",
+    "com-portion":"./components/portion/portion",
+    "com-menu":"./components/menu/menu"
+  },
+  "navigationStyle": "custom"
+}

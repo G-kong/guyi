@@ -1,0 +1,9 @@
+<!--pages/order/components/notice/notice.wxml-->
+<view class="notice-frame margin-top-sm">
+  <view class="icon-img trumpet">
+
+  </view>
+  <view class="flex-sub">
+
+  </view>
+</view>

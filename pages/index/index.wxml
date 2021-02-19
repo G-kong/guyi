@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+<view class="home-page flex flex-direction align-center">
+  <cu-custom bgColor="home-head text-white" ><view slot="content">首页</view></cu-custom> 
+  <view class="container flex-sub flex flex-direction" style="{{containerHeight}}">
+    <view class="item-list flex-sub">
+      <view class="suspend flex justify-center">
+        <com-swipe></com-swipe>
+      </view>
+      <view class="flex">
+        <com-head></com-head>
+      </view>
+      <view class="flex">
+        <com-share bind:setShadeShow="setShadeShow"></com-share>
+      </view>
+      <view class="flex flex-direction align-center">
+        <com-shareitem wx:if="{{isRedBagLeadShow}}"></com-shareitem>
+        <com-items></com-items>
+        <com-films filmType="hot"></com-films>
+        <com-films filmType="soon"></com-films>
+        <com-recipes></com-recipes>
+        <view class="padding-bottom"></view>
+      </view>
+    </view>
+    <cu-tabbar curIndex="0"></cu-tabbar>
+  </view>
+  <!-- <view wx:if="{{isAdShow}}" class="ad-itme margin-bottom-sm margin-top-xs">
+    <ad unit-id="{{unitAdId}}"></ad>
+  </view> -->
+</view>
+<com-shade wx:if="{{isShadeShow}}" bind:setShadeShow="setShadeShow"></com-shade>
+<com-redbagshade wx:if="{{isRedBagShadeShow}}"></com-redbagshade>

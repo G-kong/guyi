@@ -1,0 +1,16 @@
+<!--pages/friends/friends.wxml-->
+<cu-custom bgColor="fr-head text-white" isBack="{{true}}"><view slot="backText">分享海报</view></cu-custom>
+<view class="home-page flex flex-direction align-center">
+  <view class="container flex-sub flex flex-direction">
+    <view class="item-list flex-sub">
+      <view class="flex flex-direction align-center margin-top-xl">
+        <image style="width: 260px; height: 450px" show-menu-by-longpress="true" mode="scaleToFill" src="{{qrMini}}"></image>
+      </view>
+      <view class="flex flex-direction align-center margin-top-xl">长按图片可直接分享</view>
+      <view class="flex flex-direction align-center">邀请好友下单，你也可以获得佣金</view>
+      <view class="padding flex flex-direction align-center">
+        <button class="cu-btn bg-yellow round" role="button" aria-disabled="false" style="width: 280px" bindtap="SaveCard">保存图片到相册</button>
+      </view>
+    </view>
+  </view>
+</view>

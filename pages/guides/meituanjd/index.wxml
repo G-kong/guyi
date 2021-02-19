@@ -1,0 +1,54 @@
+<!--pages/guides/meituanwm/index.wxml-->
+<cu-custom bgColor="bg-white text-black" isBack="{{true}}">
+  <view slot="content">美团酒店</view>
+</cu-custom>
+<view class="guides-page flex flex-direction align-center">
+  <image mode="widthFix" src="https://sswmapi.gykj007.com/wmxgimg/head/t_meituan_jd.png" class="top-img"></image>
+  <view class="guides-frame bg-white">
+    <view class="guides-icons flex justify-center padding-tb">
+      <!-- 图标 -->
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-dj"></view>
+        <view class="margin-top-xs text-black">点击按钮</view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-jt"></view>
+        <view class="margin-top-xs text-black"></view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-lhb"></view>
+        <view class="margin-top-xs text-black">领红包</view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-jt"></view>
+        <view class="margin-top-xs text-black"></view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-zxd"></view>
+        <view class="margin-top-xs text-black">再下单</view>
+      </view>
+    </view>
+    <view class="guides-line">
+      <!-- 分割线-->
+      <view class="line"></view>
+      <view class="round left"></view>
+      <view class="round right"></view>
+    </view>
+    <view class="flex justify-center padding-tb">
+      <!--按钮-->
+      <button bindtap="goToMini" class="guides-btn">
+        <view wx:if="{{redbagShow}}" class="icon-img redbag margin-right-sm"></view>
+        领红包订酒店
+        <view wx:if="{{fingerShow}}" class="icon-img finger margin-left-sm"></view>
+      </button>
+    </view>
+  </view>
+  <!-- <view>
+    视频
+  </view> -->
+  <view class="guides-remark padding-sm margin-top">
+    <view>1.先领红包，付款时使用红包抵扣</view>
+    <view>2.收货地址填写的手机号需与登录美团的手机号一致才能使用红包抵扣</view>
+    <view>3.美团新老用户，每天可领取一次，红包金额官方随机发放</view>
+  </view>
+</view>

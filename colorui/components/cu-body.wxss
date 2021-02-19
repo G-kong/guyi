@@ -1,0 +1,7 @@
+/* colorui/components/cu-body.wxss */
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(to bottom, #ea3855 0vw, #ea3855 50vw, #EBEBEB 50vw, #EBEBEB 100%); */
+}

@@ -1,0 +1,20 @@
+/* pages/index/components/head/head.wxss */
+
+.home-head{
+  height: calc(40vw + 0rpx);
+  background-color: #FFFFFF;
+}
+.home-head .home-head-body {
+  width: 100vw;
+  height: 30vw;
+  background-color: #ea3855;
+}
+
+.home-head .home-head-bottom {
+  width: 100vw;
+  height: 40rpx;
+  background-color: #ea3855;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+

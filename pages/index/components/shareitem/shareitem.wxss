@@ -1,0 +1,126 @@
+/* pages/index/components/shareitem/shareitem.wxss */
+.share-item {
+  width: 90vw;
+  height: 18.587vw;
+  font-size: 28rpx;
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  color: #4a4a4a;
+  /* margin-top: 20vw ; */
+  /* position:fixed; */
+  /* bottom: 10rpx; */
+  /* left:5vw; */
+}
+.share-item.ad-height{
+  bottom: calc(10rpx + 10rpx + 63rpx);
+}
+
+.share-item .cutting_line_frame {
+  position: relative;
+  width: 32rpx;
+  height: 100%;
+  overflow: hidden;
+}
+
+.share-item .cutting_line {
+  width: 17rpx;
+  height: 100%;
+  border-right-width: 2rpx;
+  border-right-style: dashed;
+  border-color: #EBEBEB;
+}
+
+.share-item .cutting_line_frame .round {
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  background-color: #EBEBEB;
+}
+
+.share-item .cutting_line_frame .round.top {
+  top: -17rpx;
+  left: 0rpx;
+}
+
+.share-item .cutting_line_frame .round.bottom {
+  bottom: -17rpx;
+  left: 0px;
+}
+
+.share-item .item-unit {
+  margin-bottom: 8rpx;
+}
+
+.share-item .item-num {
+  color: #AA1E3B;
+  background-color: #FFEBE3;
+  border-radius: 6rpx;
+  margin-bottom: 8rpx;
+}
+
+.share-item .item-btns {
+  width: 26vw;
+}
+
+.share-item .item-btns .btn {
+  width: 70%;
+  border-radius: 30rpx;
+  color: #FFFFFF;
+  background-color: #FF5B73;
+  padding: 15rpx 10rpx;
+}
+
+
+.icon-img.redbag {
+  transform: rotate(0deg);
+  transform-origin:50% 100%;
+  /* animation: bagAnimation 1.5s  linear infinite ; */
+}
+.icon-img.redbag.animation {
+  transform: rotate(-30deg);
+  transform-origin:50% 100%;
+  animation: bagAnimation 1.5s  linear infinite ;
+}
+@keyframes bagAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  55% {
+      transform: rotate(0deg); 
+  }
+  60% {
+      transform: rotate(15deg);
+  }
+  65% {
+      transform: rotate(0deg); 
+  }
+  70% {
+    transform: rotate(-15deg);
+  }
+  75% {
+      transform: rotate(0deg); 
+  }
+  80% {
+      transform: rotate(15deg);
+  }
+  
+  85% {
+    transform: rotate(0deg); 
+}
+  90% {
+    transform: rotate(-15deg);
+  }
+  95% {
+      transform: rotate(0deg); 
+  }
+  100% {
+      transform: rotate(0deg); 
+  }
+}

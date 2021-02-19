@@ -1,0 +1,15 @@
+<!--pages/index/components/shade/shade.wxml-->
+<view class="shade-frame flex align-center justify-center padding-tb-xs padding-lr-sm" 
+  style="{{shadeTop}}" bindtap="setShadeShow">
+  <view class="icon-img xs close margin-right-sm" >
+
+  </view>
+  <view class="title text-sm flex flex-direction">
+    <text>添加到我的小程序</text>
+    <text>微信下拉快速打开</text>
+  </view>
+  
+  <view class="icon-img sm hand margin-left-sm">
+
+  </view>
+</view>

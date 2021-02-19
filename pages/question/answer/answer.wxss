@@ -1,0 +1,27 @@
+/* pages/question/question.wxss */
+.friends-page{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+  background-color: #EBEBEB;
+  /* background: linear-gradient(to bottom, #ea3855 0vw, #ea3855 40vw, #EBEBEB 40vw, #EBEBEB 100%); */
+}
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+item-list {
+  /* height: calc(100% -  40vw - 0rpx - 100rpx - 20vw - 30rpx);
+  overflow: auto; */
+  position: relative;
+  /* height: 100%; */
+  overflow: auto; 
+}
+
+.an-head{
+  background-color: #ea3855;
+}

@@ -1,0 +1,4 @@
+/* pages/own/components/advertising/advertising.wxss */
+.ad-img{
+  width: 100%;
+}

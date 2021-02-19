@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "com-user":"./components/user/user",
+    "com-divide":"./components/divide/divide",
+    "com-wallet":"./components/wallet/wallet",
+    "com-btns":"./components/btns/btns",
+    "com-advertise":"./components/advertise/advertise",
+    "com-menu":"./components/menu/menu"
+  },
+  "navigationBarBackgroundColor": "#ea3855",
+  "navigationStyle": "custom"
+}

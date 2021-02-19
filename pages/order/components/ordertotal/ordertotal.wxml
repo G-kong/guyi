@@ -1,0 +1,15 @@
+<!--pages/order/components/ordertotal/ordertotal.wxml-->
+<view class="total-frame margin-top-sm flex text-bold">
+  <view class="flex-sub flex flex-direction align-center justify-center">
+    <view>订单量</view>
+    <view class="text-xl padding-top">1</view>
+  </view>
+  <view class="flex-sub flex flex-direction align-center justify-center">
+    <view>待入账</view>
+    <view class="text-xl padding-top">¥0</view>
+  </view>
+  <view class="flex-sub flex flex-direction align-center justify-center">
+    <view>已入账</view>
+    <view class="text-xl padding-top text-red">¥0.15</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/index/components/swipe/swipe.wxml-->
+<swiper class="swipe-frame margin-top-sm " indicator-dots="" indicator-color="#AAAAAA"
+  indicator-active-color="#FFFFFF" autoplay="true" circular="true">
+    <swiper-item wx:key="index" wx:for="{{images.list}}">
+      <image class="img" mode="widthFix" src="{{item}}"></image>
+    </swiper-item>
+</swiper>

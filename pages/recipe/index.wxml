@@ -1,0 +1,13 @@
+<!--pages/recipe/index.wxml-->
+<view class="recipe-page flex flex-direction"> 
+  <cu-custom bgColor="recipe-head text-white" ><view slot="content">美食食谱</view></cu-custom>
+  <view class="container flex-sub flex flex-direction" style="{{containerHeight}}">
+    <view class="item-list flex-sub">
+      <view class="flex justify-center">
+        <com-item></com-item>
+      </view>
+    </view>
+    <cu-tabbar curIndex="1"></cu-tabbar>
+  </view>
+  
+</view>

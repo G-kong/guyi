@@ -1,0 +1,67 @@
+{
+  "code": 0,
+  "msg": "OK",
+  "othen":"https://m.meishichina.com/recipe/all/week/;  https://m.meishichina.com/recipe/{id}/",
+  "data": [
+    {
+      "id": 516732,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/516732/2020022815828693903938197577.jpg",
+      "title":"猪肉大葱馅饼",
+      "detail":"面粉、猪肉馅、大葱、酱油、蚝油、白胡椒粉、鸡粉、食盐、食用油。"
+    },
+    {
+      "id": 518686,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518686/2020022815828551895718197577.jpg",
+      "title":"自制酸辣粉",
+      "detail":"红薯粉条、熟花生米、生菜叶、香菜、蒜、葱白、白芝麻、香醋、生抽、豆瓣酱、白糖、辣椒粉、花椒、盐、油。"
+    },
+    {
+      "id": 518317,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518317/2020022615827206335401958079.jpg",
+      "title":"草莓酸奶杯",
+      "detail":"酸奶、草莓、谷物。"
+    },
+    {
+      "id": 518689,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518689/2020022815828552324778197577.jpg",
+      "title":"风味烤串",
+      "detail":"猪梅花肉、阿根廷燃情风味烤肉料、盐。"
+    },
+    {
+      "id": 518245,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518245/2020022615827089557431958079.jpg",
+      "title":"千层酥脆小麻花",
+      "detail":"面粉、水、白糖、猪油、面粉。"
+    },
+    {
+      "id": 518993,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518993/2020022915829418359768197577.jpg",
+      "title":"炸鲜奶",
+      "detail":"牛奶、玉米淀粉、糖、鸡蛋、面包糠。"
+    },
+    {
+      "id": 517391,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/517391/2020022615827103923641958079.jpg",
+      "title":"焦糖布丁蛋糕",
+      "detail":"蛋黄、蛋清、白糖、低筋面粉、玉米油、牛奶、白糖、清水、开水、鸡蛋、白糖、牛奶。"
+    },
+    {
+      "id": 518680,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518680/2020022815828551424098197577.jpg",
+      "title":"香脆鸡柳",
+      "detail":"鸡腿、面包糠、鸡蛋、玉米淀粉、蒜、藤椒烤肉料、盐、油。"
+    },
+    {
+      "id": 518389,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518389/2020022715827688397681958079.jpg",
+      "title":"江米条",
+      "detail":"糯米粉、水、白糖、麦芽糖、水、白糖、砂糖。"
+    },
+    {
+      "id": 518438,
+      "pic":"https://sswmapi.gykj007.com/wmxgimg/recipe/518438/2020022715827754463331958079.jpg",
+      "title":"网红柠檬凤爪",
+      "detail":"凤爪、柠檬、红辣椒、杭椒、姜、花椒、八角、涝汁、一品鲜酱油、糖、蚝油、料酒。"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<!--pages/index/components/filmhots/filmhots.wxml-->
+<view class="film-frame flex flex-direction align-center justify-center padding-tb-sm padding-lr-lg margin-top-sm ">
+    <view class="width-full flex flex justify-between">
+        <view wx:if="{{filmType == 'hot'}}" class="text-bold" >热映电影</view>
+        <view wx:if="{{filmType == 'soon'}}" class="text-bold">即将上映</view>
+        <view class="flex align-center text-gray" bindtap="goToFilm">
+            <view>全部{{total}}部</view>
+            <view class="cuIcon-right"></view>
+        </view>
+    </view>
+    <view class="flex film-list padding-top-xs">
+        <view wx:key="index" wx:for="{{films}}" wx:for-item="film"
+                class="film-item flex flex-direction align-center justify-center padding-right-sm"  
+                data-id="{{film.id}}" data-title="{{film.filmName}}" bindtap="goToFilmInfo">
+            <view class="film-avatar  cu-avatar" style="background-image:url({{film.pic}});"></view>
+            <view class="film-name text-xs text-cut padding-top-xs">{{ film.filmName }}</view>
+        </view>
+    </view>
+</view>

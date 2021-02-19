@@ -1,0 +1,7 @@
+/* pages/own/components/user/user.wxss */
+.user-frame{
+  /* background-color: #ea3855; */
+}
+.btn-id{
+  line-height: 26rpx;
+}

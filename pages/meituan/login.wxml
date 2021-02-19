@@ -1,0 +1,43 @@
+<!--pages/meituan/login.wxml-->
+<cu-custom bgColor="meituan-page text-white" isBack="{{true}}"><view slot="backText">返回</view></cu-custom>
+<view class="meituan-page">
+  <image mode="widthFix" src="https://sswmapi.gykj007.com/wmxgimg/banner-mt.jpg" class="top-img">
+  </image>
+  <view class="flex flex-direction align-center justify-center padding padding-lr-xl">
+    <view class="form-row flex align-center justify-center">
+      <view class="flex-sub input">
+        <input value="{{forms.mobile}}" bindinput="limitLenght" data-key="mobile" data-lenght="11" maxlength="11" type="text" placeholder="请填写手机号"/>
+      </view>
+      <view class="btn-sms flex align-center justify-center" :class="smsOp.isSmsSend?'':'disabled'"
+        bindtap="onSend">
+        {{ smsOp.text }}
+      </view>
+    </view>
+    <view class="form-row flex flex-direction align-center justify-center">
+      <view class="flex-sub input">
+        <input value="{{forms.code}}" bindinput="limitLenght" data-key="code" data-lenght="6" maxlength="6" type="text" placeholder="请填写验证码"/>
+      </view>
+    </view>
+    <view class="form-btns flex flex-direction align-center justify-center">
+      <view class="btn-submit {{forms.btnClass}}" bindtap="onSubmit">
+        登录领取红包
+      </view>
+    </view>
+  </view>
+  <!-- <svg-icon icon-class="guize_fenge" color="#A85A1B" width="100vw" height="8.378vw"></svg-icon> -->
+  <image mode="widthFix" src="https://sswmapi.gykj007.com/wmxgimg/guize-fenge.png" class="fenge-img margin-bottom-sm">
+  </image>
+  <view class="rule-text bg-white text-mm text-left radius margin-lr-sm margin-top-xs padding-xs ">
+    <view>1.本次活动中红包领取时间截止至2021年12月31日24点；</view>
+    <view>2.红包可在美团APP、美团外卖APP、美团外卖小程序下单且选择在线支付时使用；</view>
+    <view>3.红包仅限非到店自取外卖订单，下午茶、夜宵、美食、蛋糕、甜点饮品频道使用；</view>
+    <view>4.外卖新人首单红包限新用户（设备、手机号、美团账号均未在美团外卖下过单）首次下单使用，且不与其他优惠（首减、满减、满赠、套餐增、折扣菜）同享；</view>
+    <view>5.使用红包时下单手机号码必须与收餐人手机号码、领取红包时输入的手机号码一致；</view>
+    <view>6.此活动为部分区域有效，具体红包使用有效期及红包金额以实际收到为准；</view>
+    <view>7.其余问题详见美团外卖客户端“我的—红包—美团红包、商家代金券使用说明"；</view>
+    <view>8.活动过程中，任何活动参与方存在虚假交易、恶意套利、作弊等不诚信行为，美团外卖有权取消活动参与方的活动资格，并保留依法追究法律责任的权利；</view>
+    <view>9.活动期间，如出现不可抗力或情势变更的情况，美团外卖可依相关法律法规的规定主张免责；</view>
+    <view>10.如有其它疑问请咨询美团外卖客服10109777。</view>
+  </view>
+  <view class="padding-bottom"></view>
+</view>

@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "com-swipe":"./components/swipe/swipe",
+    "com-head":"./components/head/head",
+    "com-share":"./components/share/share",
+    "com-items":"./components/items/items",
+    "com-films":"./components/films/films",
+    "com-recipes":"./components/recipes/recipes",
+    "com-shareitem":"./components/shareitem/shareitem",
+    "com-shade":"./components/shade/shade",
+    "com-redbagshade":"./components/redbagshade/redbagshade"
+  },
+  "navigationBarBackgroundColor": "#ea3855",
+  "navigationStyle": "custom"
+}

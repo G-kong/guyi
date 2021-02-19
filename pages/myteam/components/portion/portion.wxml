@@ -1,0 +1,24 @@
+<!--pages/myteam/components/portion/portion.wxml-->
+<view class="flex solid-bottom padding-xs">
+  <view class="bg-white padding-sm team-radius-20 margin-top-lg" style="width:900rpx;height:360rpx">
+    <scroll-view scroll-x class="nav">
+      <view class="team-tag line-red round">
+        <view class="team-item {{index==tabCur?'bg-red':''}} line-black" wx:for="{{list}}" wx:key="item" bindtap="myteam" data-id="{{item.id}}">
+          {{item.newly}}
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="flex padding-xs">
+      <view class="flex-sub bg-gray padding-top-xs margin-xs radius-ellipse" style="height:110px">
+        <view class="flex-sub padding-left-sm padding-xs">直推好友</view>
+        <view class="padding-left-sm text-xxl padding-xs">{{subNewly}}</view>
+      </view>
+
+      <view class="flex-sub bg-gray padding-top-xs margin-xs radius-ellipse" style="height:110px">
+        <view class="flex-sub padding-left-sm padding-xs">扩散好友</view>
+        <view class="padding-left-sm text-xxl padding-xs">{{ssubNewly}}</view>
+      </view>
+    </view>
+  </view>
+</view>

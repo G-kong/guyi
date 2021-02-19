@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/index",
+    "pages/eleme/login",
+    "pages/meituan/login",
+    "pages/friends/friends",
+    "pages/question/question",
+    "pages/question/answer/answer",
+    "pages/own/index",
+    "pages/recipe/index",
+    "pages/recipe/details",
+    "pages/guides/elemewm/index",
+    "pages/guides/kfc/index",
+    "pages/guides/meituanjd/index",
+    "pages/guides/meituansc/index",
+    "pages/guides/meituanwm/index",
+    "pages/guides/movie/index",
+    "pages/browser/index",
+    "pages/film/index",
+    "pages/film/details",
+    "pages/myteam/myteam",
+    "pages/myteam/newpoints/newpoints",
+    "pages/myteam/details/details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "生活讯息",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "cu-body": "/colorui/components/cu-body",
+    "cu-tabbar": "/colorui/components/cu-tabbar"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于为您提供更合适您的服务"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+
+  "entryPagePath": "pages/myteam/details/details"
+}

@@ -1,0 +1,4 @@
+<!--colorui/components/cu-body.wxml-->
+<view class="container flex-sub flex flex-direction" style="{{isHead ? containerHeight : ''}}">
+  <slot></slot>
+</view>

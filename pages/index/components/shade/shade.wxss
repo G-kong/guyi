@@ -1,0 +1,73 @@
+/* pages/index/components/shade/shade.wxss */
+.shade-frame{
+  position: absolute;
+  top:15rpx;
+  right: 100rpx;
+  /* width: 100rpx;
+  height: 90rpx; */
+  border-radius: 15rpx;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+/* .shade-frame:before {
+  content:"";
+  width:0;
+  height:0;
+  position: absolute;
+  top: -20rpx;
+  right: 60rpx; 
+  border-top:solid 10rpx transparent;
+  border-left:solid 10rpx transparent ; 
+  border-right:solid 10rpx transparent ; 
+  border-bottom:solid 10rpx rgba(0,0,0,0.6);
+} */
+.shade-frame .title{
+  color:#FFF;
+}
+
+.icon-img.hand{
+  transform: translateY(-10rpx);
+  animation: handAnimation 1.5s  linear infinite ;
+}
+
+@keyframes handAnimation {
+  0% {
+    transform: translateY(0rpx);
+  }
+  45% {
+    transform: translateY(0rpx);
+  }
+  50% {
+    transform: translateY(10rpx);
+  }
+  55% {
+    transform: translateY(0rpx);
+  }
+  60% {
+    transform: translateY(-10rpx);
+  }
+  65% {
+    transform: translateY(0rpx);
+  }
+  70% {
+    transform: translateY(10rpx);
+  }
+  75% {
+    transform: translateY(0rpx);
+  }
+  80% {
+    transform: translateY(-10rpx);
+  }
+  85% {
+    transform: translateY(0rpx);
+  }
+  90% {
+    transform: translateY(10rpx);
+  }
+  95% {
+    transform: translateY(0rpx);
+  }
+  100% {
+    transform: translateY(0rpx);
+  }
+}

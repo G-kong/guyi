@@ -1,0 +1,23 @@
+/* pages/index/components/share/share.wxss */
+.share-frame{
+  width: 100vw;
+  height: 100rpx;
+  background-color: #FFFFFF;
+}
+
+.share-frame .share-item{
+  height: 100%;
+}
+
+.share-frame .share-line-frame{
+  width: 6rpx;
+  height: 60%;
+}
+
+.share-frame .share-line-frame .share-line{
+  width: 2rpx;
+  height: 100%;
+  border-right-width: 2rpx;
+  border-right-style: dashed;
+  border-color: #EBEBEB;
+}

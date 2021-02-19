@@ -1,0 +1,147 @@
+.icon-img{
+  font-variant: small-caps;
+	/* margin: 0;
+	padding: 0; */
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	/* background-color: #ccc; */
+	color: var(--white);
+	white-space: nowrap;
+	position: relative;
+	width: 64rpx;
+	height: 64rpx;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	font-size: 1.5em;
+}
+
+.icon-img.xs {
+	width: 24rpx;
+	height: 24rpx;
+	font-size: 0.5em;
+}
+
+.icon-img.sm-xs {
+	width: 36rpx;
+	height: 36rpx;
+	font-size: 0.5em;
+}
+
+.icon-img.sm {
+	width: 48rpx;
+	height: 48rpx;
+	font-size: 1em;
+}
+
+
+.icon-img.xl {
+	width: 128rpx;
+	height: 128rpx;
+	font-size: 2.5em;
+}
+
+.icon-img.menu{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/menu.png);
+}
+
+.icon-img.wechat{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/wechat.png);
+}
+.icon-img.close{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/close-2.png);
+}
+.icon-img.hand{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/hand.png);
+}
+.icon-img.redbag{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/redpacket.png);
+}
+.icon-img.kefu{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/kefu.png);
+}
+.icon-img.order-off{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/order-off.png);
+}
+.icon-img.order-on{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/order-on.png);
+}
+.icon-img.welfare-off{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/welfare-off.png);
+}
+.icon-img.welfare-on{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/welfare-on.png);
+}
+.icon-img.recipe-off{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/recipe-off.png);
+}
+.icon-img.recipe-on{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/recipe-on.png);
+}
+.icon-img.own-off{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/own-off.png);
+}
+.icon-img.own-on{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/own-on.png);
+}
+.icon-img.film-off{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/film-off.png);
+}
+.icon-img.film-on{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/tabbar/film-on.png);
+}
+
+.icon-img.icon-dc{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-dc.png);
+}
+.icon-img.icon-dj{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-dj.png);
+}
+.icon-img.icon-jt{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-jt.png);
+}
+.icon-img.icon-lhb{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-lhb.png);
+}
+.icon-img.icon-mdqc{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-mdqc.png);
+}
+.icon-img.icon-mfl{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-mfl.png);
+}
+.icon-img.icon-xzyp{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-xzyp.png);
+}
+.icon-img.icon-zkgp{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-zkgp.png);
+}
+.icon-img.icon-zxd{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-zxd.png);
+}
+.icon-img.icon-ask-green{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-ask-green.png);
+}
+.icon-img.icon-ask{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-ask.png);
+}
+.icon-img.icon-invite{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-invite.png);
+}
+.icon-img.icon-service{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-service.png);
+}
+.icon-img.icon-team{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-team.png);
+}
+.icon-img.icon-wechat{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/icon-wechat.png);
+}
+.icon-img.invite-strip{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/icon/invite-strip.png);
+}
+.icon-img.finger{
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/finger.png);
+}

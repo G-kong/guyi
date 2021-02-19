@@ -1,0 +1,52 @@
+<!--pages/guides/meituanwm/index.wxml-->
+<cu-custom bgColor="bg-white text-black" isBack="{{true}}">
+  <view slot="content">肯德基</view>
+</cu-custom>
+<view class="guides-page flex flex-direction align-center">
+  <image mode="widthFix" src="https://sswmapi.gykj007.com/wmxgimg/head/t_kfc.png" class="top-img"></image>
+  <view class="guides-frame bg-white">
+    <view class="guides-icons flex justify-center padding-tb">
+      <!-- 图标 -->
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-lhb"></view>
+        <view class="margin-top-xs text-black">到达门店</view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-jt"></view>
+        <view class="margin-top-xs text-black"></view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-dc"></view>
+        <view class="margin-top-xs text-black">线上点餐</view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-jt"></view>
+        <view class="margin-top-xs text-black"></view>
+      </view>
+      <view class="flex flex-direction align-center">
+        <view class="guides-icon icon-img lg icon-mdqc"></view>
+        <view class="margin-top-xs text-black">门店取餐</view>
+      </view>
+    </view>
+    <view class="guides-line">
+      <!-- 分割线-->
+      <view class="line"></view>
+      <view class="round left"></view>
+      <view class="round right"></view>
+    </view>
+    <view class="flex justify-center padding-tb">
+      <!--按钮-->
+      <button bindtap="goToMini" class="guides-btn">
+        <view wx:if="{{redbagShow}}" class="icon-img redbag margin-right-sm"></view>
+        线上优惠点餐
+        <view wx:if="{{fingerShow}}" class="icon-img finger margin-left-sm"></view>
+      </button>
+    </view>
+  </view>
+  <!-- <view>
+    视频
+  </view> -->
+  <view class="guides-remark padding-sm margin-top">
+    <view> 1.到达肯德基门店点餐，点餐后，在门店等待叫号，凭借取餐码取餐</view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/index/components/share/share.wxml-->
+<view class="share-frame flex align-center justify-center padding-lr-lg">
+  <button hover-class="none"  class="top-contact share-item flex-sub flex align-center justify-center" open-type='share'>
+    <view class="icon-img wechat margin-lr-xs"></view>
+    <view class="flex flex-direction text-sm" >
+      <text>分享给好友</text>
+      <text>一起来省钱</text>
+    </view>
+  </button>
+  <view class="share-line-frame">
+    <view class="share-line"></view>
+  </view>
+  <button hover-class="none" class="share-item flex-sub flex align-center justify-center" bindtap="setShadeShow">
+    <view class="icon-img menu margin-lr-xs"></view>
+    <view class="flex flex-direction text-sm">
+      <text>添加小程序</text>
+      <text>收藏不走丢</text>
+    </view>
+  </button>
+</view>

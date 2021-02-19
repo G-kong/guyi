@@ -1,0 +1,8 @@
+<!--pages/recipe/details.wxml-->
+<import src="/pages/components/wxParse/wxParse.wxml"/>
+<cu-custom bgColor="recipe-head text-white"  isBack="{{true}}"><view slot="content">{{title}}</view></cu-custom>
+<scroll-view scroll-y class="scrollPage bg-white ">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  <!-- <com-content></com-content> -->
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

@@ -1,0 +1,28 @@
+<!--pages/myteam/components/menu/menu.wxml-->
+<view class="solids-bottom padding-xs flex solid-bottom justify-center">
+    <view class="bg-white team-radius-20" style="width:900rpx">
+      <view class="flex" bindtap="goToNewPoints">
+        <view class="padding-lg text-50 flex align-center margin-sm text-center" style="width:10px;height:10px">
+          <view class="cuIcon-rank lg text-red bg-yellow light team-radius-15"></view>
+        </view>
+        <view class="flex flex-treble margin-xs radius padding text-lg">
+          用户新增数据
+        </view>
+        <view class="flex solid-bottom padding-lg text-xxl justify-end">
+          <text class="cuIcon-right lg text-gray"></text>
+        </view>
+      </view>
+
+      <view class="flex solids-bottom solids-top" bindtap="goToDetails">
+        <view class="padding-lg text-50 flex align-center margin-sm text-center" style="width:10px;height:10px">
+          <view class="cuIcon-calendar lg text-red bg-yellow light team-radius-15"></view>
+        </view>
+        <view class="flex flex-treble margin-xs radius padding text-lg">
+          用户数据明细
+        </view>
+        <view class="flex solid-bottom padding-lg text-xxl justify-end">
+          <text class="cuIcon-right lg text-gray"></text>
+        </view>
+      </view>
+    </view>
+  </view>

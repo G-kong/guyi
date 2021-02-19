@@ -1,0 +1,165 @@
+/* pages/index/components/redbagShare/redbagshare.wxss */
+.redbagshade-frame{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.redbag-frame {
+  width: 70vw;
+  height: 111.759vw;
+  border-radius: 15rpx;
+	background-size: contain;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-color: #F15341;
+	background-image: url(https://sswmapi.gykj007.com/wmxgimg/redbag-bg-new.png);
+}
+.redbag-frame-close{
+  border-radius: 50%;
+  border: 4rpx solid #FFFFFF;
+  background-size: 50% 50%;
+}
+.redbag-logo{
+	background-size: contain;
+	background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: url(https://sswmapi.gykj007.com/wmxgimg/eleme-logo.png); */
+}
+.redbag-logo.eleme{
+  width: 32.658vw;
+  height: 12vw;
+  margin-top: 15vw;
+  background-image: url(https://sswmapi.gykj007.com/wmxgimg/eleme-logo-new.png);
+}
+.redbag-logo.meituan{
+  width: 14vw;
+  height: 14vw;
+  margin-top: 13vw;
+  background-image: url(https://sswmapi.gykj007.com/wmxgimg/meituan-logo-new.png);
+}
+.redbag-title{
+  font-size: 48rpx;
+  color: #FAE3B7;
+  margin-top: 10vw;
+}
+.redbag-open{
+	position: relative;
+  width: 20vw;
+  height: 20vw;
+  margin-top: 38vw;
+  /* box-shadow: 0rpx 2rpx 10px rgba(190, 64, 51, 1) ; */
+}
+.redbag-open::before{
+  content: " ";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+  top: 10rpx;
+	left: 0;
+  border-radius: 50%;
+  background-color: rgba(190, 64, 51, 1);
+}
+.redbag-open-text{
+	position: absolute;
+  top: 0;
+	left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #333333;
+  border-radius: 50%;
+  background-color: #EBCD9B;
+  z-index: 1;
+}
+.redbag-open-a-bounce{
+  animation: redbag-open-bounce 2s  linear infinite ;
+}
+
+@keyframes redbag-open-bounce {
+  0% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  5% {
+    transform: scale(1.2,0.8);
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  15% {
+    transform: scale(0.8,1.2);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.2,0.8);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  35% {
+    transform: scale(0.8,1.2);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1,1);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1,1);
+    opacity: 0;
+  }
+  90% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+}
+
+.redbag-open-a-rotate{
+  animation: redbag-open-rotate 1.5s  linear infinite ;
+}
+
+@keyframes redbag-open-rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  45% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  95% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

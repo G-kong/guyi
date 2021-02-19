@@ -1,0 +1,15 @@
+<!--pages/myteam/newpoints/newpoints.wxml-->
+<view class="newpoints-page flex flex-direction align-center">
+  <cu-custom bgColor="team-head text-white" isBack="{{true}}"><view slot="backText">团队新增数据汇总</view></cu-custom>
+  <view class="bg-white text-center grid col-3" style="width: 100vw">
+    <view class="padding-lg">时间</view>
+    <view class="padding-lg">直推好友</view>
+    <view class="padding-lg">扩散好友</view>
+  </view>
+  <view class="text-center grid col-3 {{index%2==0?'bg-gray':'bg-white'}}" style="width: 100vw" wx:for="{{list}}" wx:key="item">
+    <view class="padding">{{item.time}}</view>
+    <view class="padding">{{item.subNum}}</view>
+    <view class="padding">{{item.ssubNum}}</view>
+  </view>
+  <view class="text-gray text-center text-xs margin-tb-sm">没有更多了</view>
+</view>

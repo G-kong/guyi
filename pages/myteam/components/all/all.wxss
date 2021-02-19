@@ -1,0 +1,12 @@
+/* pages/own/components/all/all.wxss */
+.bg-red{
+  background-color: #ea3855;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.line{
+  float:left;width: 1px;height: 25px; background: #EBEBEB;
+}

@@ -1,0 +1,16 @@
+<!--pages/own/index.wxml-->
+
+<view class="own-page flex flex-direction align-center">
+  <cu-custom bgColor="own-head text-white" ><view slot="content">会员中心</view></cu-custom> 
+  <view class="container flex-sub flex flex-direction" style="{{containerHeight}}">
+    <view class="item-list flex-sub">
+      <com-user></com-user>
+      <com-divide></com-divide>
+      <com-wallet></com-wallet> 
+      <com-btns></com-btns>
+      <com-advertise></com-advertise>
+      <com-menu></com-menu>
+    </view>
+    <cu-tabbar curIndex="2"></cu-tabbar>
+  </view>
+</view>

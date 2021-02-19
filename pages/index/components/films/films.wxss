@@ -1,0 +1,29 @@
+/* pages/index/components/filmhots/filmhots.wxss */
+.film-frame{
+    width: 95vw;
+    /*height: 18.587vw;*/
+    background-color: #FFFFFF;
+    border-radius: 16rpx;
+    color: #4a4a4a;
+}
+
+.film-list{
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+
+.film-item{
+    /* width: 136rpx; */
+}
+
+.film-avatar{
+    /* position: absolute; */
+    width: 150rpx;
+    height: 200rpx;
+    font-size: 2.5em;
+}
+
+.film-name { 
+    width: 150rpx;
+}

@@ -1,0 +1,8 @@
+/* pages/order/components/ordertotal/ordertotal.wxss */
+.total-frame {
+  width: 95vw;
+  height: 215rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background-color: #FFF;
+}

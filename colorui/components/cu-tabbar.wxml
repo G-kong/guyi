@@ -1,0 +1,11 @@
+<!--colorui/components/cu-bar.wxml-->
+<view class="cu-bar tabbar bg-white">
+  <view class="action" wx:key="index" wx:for="{{tabbarList}}" wx:if="{{item.icon != 'own' || isShowOwn}}">
+    <view bindtap="goToPage" data-index="{{item.index}}" data-path="{{item.path}}">
+      <view class="cuIcon-cu-image padding-bottom-xs">
+        <view class="icon-img {{item.icon}}-{{item.index == curIndex ? 'on' : 'off' }} sm"></view>
+      </view>
+      <view class="{{item.index == curIndex ? 'text-bold' : '' }}">{{item.title}}</view>
+    </view>
+  </view>
+</view>

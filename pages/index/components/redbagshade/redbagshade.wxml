@@ -1,0 +1,14 @@
+<!--pages/index/components/redbagShare/redbagshare.wxml-->
+
+<!-- <view bindtap="tapMini" data-type="eleme">饿了么</view>
+<view bindtap="tapMini" data-type="meituan">美团</view> -->
+<view wx:if="{{isShow}}" class="redbagshade-frame flex flex-direction align-center justify-center">
+  <view class="redbag-frame flex flex-direction align-center justify-start">
+    <view class="redbag-logo {{item.typeClass}}"></view>
+    <view class="redbag-title text-xl margin-top-xl">{{item.title}}</view>
+    <view class="redbag-open {{isClick?'redbag-open-a-rotate':'redbag-open-a-bounce'}} " bindtap="tapMini">
+      <view class="redbag-open-text flex align-center justify-center">開</view>
+    </view>
+  </view>
+  <view class="redbag-frame-close icon-img sm close margin-top " bindtap="closeShow"></view>
+</view>

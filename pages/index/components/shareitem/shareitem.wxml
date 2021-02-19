@@ -1,0 +1,24 @@
+<!--pages/index/components/shareitem/shareitem.wxml-->
+<button hover-class="none" class="bottom-contact"
+    show-message-card 
+    send-message-title="{{contact.sendMessageTitle}}"	
+    send-message-img="{{contact.sendMessageImg}}"	
+    send-message-path="{{contact.sendMessagePath}}"	
+    open-type='contact'>
+  <view class="share-item {{isAdShow?'ad-height':'' }} flex align-center justify-center padding-left margin-top-sm " >
+    <view class="flex-sub flex align-center justify-center">
+      <view class="icon-img lg redbag"></view>
+      <view class="flex-sub flex flex-direction align-center justify-center">
+        <view wx:for="{{titles}}" class="text-bold" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+    <view class="cutting_line_frame">
+      <view class="cutting_line" />
+      <view class="round top" />
+      <view class="round bottom" />
+    </view>
+    <view class="item-btns flex align-center justify-center">
+      <button class="btn text-sm text-center">了解更多</button>
+    </view>
+  </view>
+</button>

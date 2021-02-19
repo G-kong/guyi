@@ -1,0 +1,29 @@
+/* pages/index/components/recipes/recipes.wxss */
+.recipes-frame{
+  width: 95vw;
+  /*height: 18.587vw;*/
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  color: #4a4a4a;
+}
+
+.recipes-list{
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+.recipes-item{
+  /* width: 136rpx; */
+}
+
+.recipes-avatar{
+  /* position: absolute; */
+  width: 150rpx;
+  height: 150rpx;
+  font-size: 2.5em;
+}
+
+.recipes-name { 
+  width: 150rpx;
+}

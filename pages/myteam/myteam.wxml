@@ -1,0 +1,11 @@
+<!--pages/myteam/myteam.wxml-->
+<view class="myteam-page flex flex-direction align-center">
+  <cu-custom bgColor="team-head text-white" isBack="{{true}}"><view slot="backText">我的团队</view></cu-custom>
+  <view class="container flex-sub flex flex-direction">
+    <view class="item-list flex-sub">
+      <com-all></com-all>
+      <com-portion></com-portion>
+      <com-menu></com-menu>
+    </view>
+  </view>
+</view>

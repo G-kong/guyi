@@ -1,0 +1,37 @@
+<!--pages/own/components/user/user.wxml-->
+<view wx:if="{{pmcUser.guserId > 0}}" class="user-frame flex align-center padding-sm" bindtap="pmcAuth">
+  <view class="cu-avatar lg bg-white round margin-left-sm" style="background-image:url({{pmcUser.avatar}});">
+  </view>
+  <view class="flex-sub padding-left ">
+    <view class="text-xl text-white text-bold flex align-center">
+      {{pmcUser.nickname}}
+      <button class="text-sm padding-lr-sm margin-left-sm round bg-white button-hover  text-orange" role="button" aria-disabled="false">
+        VIP会员
+      </button>
+    </view>
+    <view class="btn-id text-df text-white flex align-center margin-top-xs ">
+      ID：{{pmcUser.guserId}}
+      <button class="text-sm padding-lr-sm margin-left-sm round bg-yellow button-hover " role="button" aria-disabled="false">
+        复制
+      </button>
+    </view>
+  </view>
+</view>
+<view wx:else class="user-frame flex align-center padding-sm" bindtap="onLogin">
+  <view class="cu-avatar lg bg-white round margin-left-sm" style="background-image:url('https://sswmapi.gykj007.com/wmxgimg/user_avatar.png');">
+  </view>
+  <view class="flex-sub padding-left ">
+    <view class="text-xl text-white text-bold flex align-center">
+      {{'点击登陆'}}
+      <!-- <button class="text-sm padding-lr-sm margin-left-sm round bg-white button-hover  text-orange" role="button" aria-disabled="false">
+        VIP会员
+      </button> -->
+    </view>
+    <view class="btn-id text-df text-white flex align-center margin-top-xs ">
+      ID：{{'0000000000000000000'}}
+      <button class="text-sm padding-lr-sm margin-left-sm round bg-yellow button-hover " role="button" aria-disabled="false">
+        复制
+      </button>
+    </view>
+  </view>
+</view>

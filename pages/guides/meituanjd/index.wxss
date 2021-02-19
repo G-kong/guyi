@@ -1,0 +1,79 @@
+/* pages/guides/meituanwm/index.wxss */
+page{
+  --baseColor: #FF5900;  /* 背景颜色*/
+  --assistColor: #FF7200; /* 图标背景色 */
+  --remarkColor: #FFF0E0; /* 备注背景色 */
+  --btnColor:#FFFFFF; /* 按钮文字色 */
+  background-color: var(--baseColor);
+}
+.guides-page{
+  position: relative;
+  width: 100vw;
+  /* height: 100vh; */
+  overflow: auto;
+}
+
+.guides-frame{
+  width: 95vw;
+  border-radius: 16rpx;
+}
+
+.guides-icon{
+  border-radius: 50%;
+  background-color: var(--assistColor);
+}
+
+.guides-line{
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  overflow: hidden;
+}
+
+.guides-line .line{
+  width: 100%;
+  height: 30rpx;
+  border-bottom-width: 2rpx;
+  border-bottom-style: dashed;
+  border-color: var(--assistColor);
+}
+
+.guides-line .round{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: var(--baseColor);
+}
+.guides-line .round.left {
+  top: 0rpx;
+  left: -30rpx;
+}
+
+.guides-line .round.right {
+  top: 0rpx;
+  right: -30rpx;
+}
+
+.guides-btn{
+  width: 80VW;
+  height: 12VW;
+  line-height:12vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--btnColor);
+  font-size: 36rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, var(--assistColor) 0%, var(--baseColor) 100%);
+}
+.guides-remark{
+  width: 95vw;
+  color: #000;
+  font-size: 32rpx;
+  line-height:42rpx;
+  border-radius: 16rpx;
+  background-color: var(--remarkColor);
+}

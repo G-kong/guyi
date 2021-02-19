@@ -1,0 +1,69 @@
+/* pages/own/index.wxss */
+.own-head{
+  background-color: #ea3855;
+}
+.own-page{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #EBEBEB;
+  /* background: linear-gradient(to bottom, #ea3855 0vw, #ea3855 40vw, #EBEBEB 40vw, #EBEBEB 100%); */
+}
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ea3855 0vw, #ea3855 50vw, #EBEBEB 50vw, #EBEBEB 100%);
+}
+
+.item-list {
+  /* height: calc(100% -  40vw - 0rpx - 100rpx - 20vw - 30rpx);
+  overflow: auto; */
+  position: relative;
+  /* height: 100%; */
+  overflow: auto; 
+}
+
+.radius-ellipse {
+  border-radius: 20rpx;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+
+.line{
+  width: 1px;
+  height: 80%; 
+  background: #f0f0f0;
+}
+
+.cu-btn-detail{
+  position: relative;
+  border: 0rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
+  font-size: 28rpx;
+  height: 34rpx;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
+  margin-left: 15rpx;
+  transform: translate(0rpx, 0rpx);
+  margin-right: initial;
+}
+
+.text-xxxl {
+	font-size: 60rpx;
+}
+
+.solidss::after {
+	border: 8rpx solid #000000;
+}

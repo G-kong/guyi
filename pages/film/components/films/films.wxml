@@ -1,0 +1,26 @@
+<!--pages/index/components/item/item.wxml-->
+<scroll-view scroll-y style="width: 100%; height: 100%;" refresher-enabled="{{true}}" refresher-threshold="{{100}}"
+  refresher-default-style="white" refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling"
+  bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" bindrefresherabort="onAbort" bindscrolltolower="onLower">
+
+  <!-- refresher-background="lightgreen" -->
+
+  <view wx:key="index" wx:for="{{films}}" wx:for-item="film"
+    class="film-item flex align-center justify-center padding margin-top-sm "
+    data-id="{{film.id}}" data-title="{{film.filmName}}" bindtap="goToFilmInfo">
+    <view class="flex align-center justify-start width-full">
+      <view class="film-avatar cu-avatar" style="background-image:url({{film.pic}});">
+
+      </view>
+      <view class="flex-sub flex flex-direction margin-left-sm film-content">
+
+        <text class="text-xl text-bold text-cut"> {{ film.filmName }}</text>
+        <text class="text-gray text-cut">评分：<text class="text-red text-cut"> {{ film.grade }}</text></text>
+        <text class="text-gray text-cut"> {{ film.cast }}</text>
+        <text class="text-gray text-cut"> {{ film.publishDate }}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{pageOp.isFinish}}" class="text-gray text-center text-xs margin-tb-sm">已经到底了 </view>
+  <view wx:else class="text-gray text-center text-xs margin-tb-sm">加载数据中请稍等</view>
+</scroll-view>

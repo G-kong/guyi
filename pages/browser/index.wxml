@@ -1,0 +1,4 @@
+<!--pages/browser/index.wxml-->
+<web-view wx:if="{{isShow && url.length > 0}}" src="{{url}}" bindmessage="bindMessage"/>
+<!-- scope=snsapi_base  静默授权,自动跳转到回调页的  特点：用户无感知；-->
+<!-- scope=snsapi_userinfo  非静默授权，第一次有弹框 -->

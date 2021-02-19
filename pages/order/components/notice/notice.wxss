@@ -1,0 +1,8 @@
+/* pages/order/components/notice/notice.wxss */
+.notice-frame {
+  width: 95vw;
+  height: 48rpx;
+  /* border-radius: 10rpx; */
+  overflow: hidden;
+  background-color: #F8EAC5;
+}

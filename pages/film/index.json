@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "com-films":"./components/films/films"
+  },
+  "navigationBarBackgroundColor": "#ea3855",
+  "navigationStyle": "custom" 
+}

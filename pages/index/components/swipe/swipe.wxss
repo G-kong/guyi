@@ -1,0 +1,17 @@
+/* pages/index/components/swipe/swipe.wxss */
+
+.swipe-frame {
+  width: 95vw;
+  height: 280rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.swipe-frame .img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 40rpx;
+  transform: translateY(0);
+}

@@ -1,0 +1,17 @@
+<!--pages/question/question.wxml-->
+<cu-custom bgColor="qu-head text-white" isBack="{{true}}"><view slot="backText">常见问题</view></cu-custom>
+<view class="home-page flex flex-direction">
+
+  <view class="flex bg-white solids-top" wx:key="index" wx:for="{{array}}" data-id="{{item.id}}" bindtap="goToAnswer">
+    <view class="text-xl margin-xs padding-sm flex align-center">
+      <image style="width: 20px; height: 20px" src="https://sswmapi.gykj007.com/wmxgimg/icon/icon-ask-green.png"></image>
+    </view>
+    <view class="flex flex-treble margin-xs text-left align-center">
+      {{item.question}}
+    </view>
+    <view class="flex padding-lg  text-xl justify-end">
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,5 @@
+<!--pages/own/components/advertising/advertising.wxml-->
+<view wx:if="{{isAdShow}}" class="flex padding-lr-xs padding-top-sm ">
+  <image mode="widthFix" src="https://sswmapi.gykj007.com/wmxgimg/invite-strip.jpg" class="ad-img">
+  </image>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/own/components/all/all.wxml-->
+<view class="bg-red flex flex-direction-row text-center text-sm align-center" style="width:750rpx;height:200rpx">
+    <view class="flex-sub">
+      <view>直推好友</view>
+      <view class="text-xxl">{{subNum}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="flex-sub">
+      <view>扩散好友</view>
+      <view class="text-xxl">{{ssubNum}}</view>
+    </view>
+  </view>

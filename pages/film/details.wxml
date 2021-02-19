@@ -1,0 +1,22 @@
+<!--pages/film/components/filminfo.wxml-->
+<cu-custom bgColor="film-head text-white" isBack="{{true}}">
+  <view slot="content">{{title}}</view>
+</cu-custom>
+<scroll-view scroll-y class="scrollPage bg-white ">
+  <view class="film-pic-bg flex padding-sm">
+    <view class="film-pic-shade" style="background-image:url({{ item.pic }});"></view>
+    <view class="film-avatar cu-avatar" style="background-image:url({{ item.pic }});"></view>
+    <view class="film-content flex flex-direction text-white padding-left-sm">
+      <view class="text-cut">{{ item.filmName }}</view>      
+      <view class="text-xs text-cut">评分：<text class="text-df text-orange text-cut"> {{ item.grade }}</text></view>
+      <view class="text-xs text-cut">{{ item.filmTypes }}</view>
+      <view class="text-xs text-cut">{{ item.duration }} 分钟</view>
+      <view class="text-xs text-cut">{{ item.publishDate }} 上映</view>
+      <view class="text-xs text-cut-2">主演 {{ item.cast }}</view>
+    </view>
+  </view>
+  <view class="flex-sub film-intro padding-sm">
+    <view class="text-bold text-red">介绍</view>
+    <view class="padding-top-sm">{{item.intro}}</view>
+  </view>
+</scroll-view>
