@@ -1,16 +1,42 @@
-<!--pages/myteam/newpoints/newpoints.wxml-->
-<view class="newpoints-page flex flex-direction align-center">
+<!--pages/myteam/details/details.wxml-->
+<view class="newpoints-page flex flex-direction">
   <cu-custom bgColor="team-head text-white" isBack="{{true}}"><view slot="backText">团队成员数据明细</view></cu-custom>
-  <!-- <view class="bg-white text-center grid col-2" style="width: 100vw">
-    <view class="padding-lg" wx:for="{{list}}" wx:key="item" bindtap="getFriend" data-id="{{item.id}}">
-      {{item.friend}}
-      <view class='line' wx:if="{{tabCur==item.id}}"></view>
+
+  <view class="bg-white text-center grid col-2 align-center margin-bottom-xs" style="width: 100vw">
+    <view class="padding-sm" wx:for="{{list}}" wx:key="item" bindtap="getFriend" data-id="{{item.id}}">
+      <view class=" {{index==tabCur?'text-red':''}} padding-15">
+        {{item.friend}}
+      </view>
+      <view class="line" wx:if="{{tabCur==index}}"></view>
     </view>
-  </view> -->
-  <view class="bg-white text-center grid col-2" style="width: 100vw">
-    <view class="padding-lg text-red">
-      直推好友
-    </view>
-    <view class="padding-lg">扩散好友</view>
   </view>
+
+  <view class="bg-white margin-top-sm margin-left-xs margin-right-xs radius-15" wx:for="{{subFrined}}" wx:key="item">
+    <view class="solid-bottom flex justify-between">
+      <view class="flex">
+        <view class="cu-head bg-white round margin-left-sm margin-top" style="background-image:url({{item.avatar}});">
+        </view>
+        <view class="padding">
+          <view class="font-text">{{item.nickName}}</view>
+          <view class="margin-top-sm" style="color: #a2a2a2">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="margin-top-60 margin-right-sm">邀请明细({{item.renNum}}人)></view>
+    </view>
+
+    <view class="line-cut"></view>
+
+    <view class="flex padding justify-around text-center margin-top">
+      <view class="flex-sub">
+        <view>订单量</view>
+        <view class="font-text">{{item.ordeSize}}</view>
+      </view>
+      <view class="flex-sub">
+        <view>贡献佣金</view>
+        <view class="font-text">{{item.money}}</view>
+      </view>
+    </view>
+
+  </view>
+
 </view>

@@ -1,4 +1,4 @@
-// pages/myteam/newpoints/newpoints.js
+// pages/myteam/details/details.js
 const store = getApp().globalData;
 const team = store.ApiServe().team;
 Page({
@@ -17,6 +17,49 @@ Page({
         id: 1,
         friend: "扩散好友"
       }
+    ],
+
+    subFrined: [
+      {
+        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
+        nickName: "G-kong",
+        time: "2020-02-20 20:20",
+        renNum: "30",
+        ordeSize: "20",
+        money: "20"
+      },
+      {
+        avatar: "http://thirdwx.qlogo.cn/mmopen/NhwzVYNvSSRlibBQGVoM5ibibyXKcicHibjthqVKhxPDIibWd0reyf29hloKPWGbCsQLmGr7WwDTS0XAZuldRcVNmF0iaxibwCgFgcicD/132",
+        nickName: "苦桉树",
+        time: "2020-02-20 20:20",
+        renNum: "0",
+        ordeSize: "10",
+        money: "10"
+      },
+      {
+        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
+        nickName: "G-kong",
+        time: "2020-02-20 20:20",
+        renNum: "0",
+        ordeSize: "20",
+        money: "20"
+      },
+      {
+        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
+        nickName: "G-kong",
+        time: "2020-02-20 20:20",
+        renNum: "0",
+        ordeSize: "20",
+        money: "20"
+      },
+      {
+        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
+        nickName: "G-kong",
+        time: "2020-02-20 20:20",
+        renNum: "0",
+        ordeSize: "20",
+        money: "20"
+      },
     ]
   },
 

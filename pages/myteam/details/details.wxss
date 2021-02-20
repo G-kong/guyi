@@ -1,4 +1,4 @@
-/* pages/myteam/newpoints/newpoints.wxss */
+/* pages/myteam/details/details.wxss */
 .newpoints-page{
   position: relative;
   width: 100vw;
@@ -23,32 +23,23 @@
   overflow: auto; 
 }
 
-.line{
-  margin:0auto;
-  width: 10%;
+.line {
+  margin: 0 auto;
+  width: 22%;
   height: 5rpx;
   background: #ea3855;
-  border-radius: 5rpx;
+  border-radius: 3rpx;
+}
+
+.line-cut {
+  margin: 0 auto;
+  width: 95%;
+  height: 1rpx;
+  background: #ebebeb;
 }
 
 .flex-direction-row {
   flex-direction: row;
-}
-
- .bg-yellow{
-  background-color: #fbff0a;
-}
-
-.team-radius-20 {
-	border-radius: 20rpx;
-}
-
-.team-radius-15 {
-	border-radius: 15rpx;
-}
-
-.text-50 {
-	font-size: 50rpx;
 }
 
 .team-head{
@@ -56,5 +47,40 @@
 }
 
 .text-red{
-  color: #ea3855
+  color: #ea3855;
+}
+
+.padding-15 {
+  padding: 15rpx;
+}
+
+.font-text {
+  font-weight: 550;
+  font-size: 35rpx;
+  color: #3c3c3c;
+}
+
+.cu-head {
+	font-variant: small-caps;
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	white-space: nowrap;
+	position: relative;
+	width: 85rpx;
+	height: 85rpx;
+	background-size: cover;
+	background-position: center;
+	vertical-align: middle;
+	font-size: 2em;
+}
+
+.margin-top-60 {
+  margin-top: 60rpx;
+  color: #926d40;
+}
+
+.radius-15 {
+  border-radius: 15rpx;
 }
