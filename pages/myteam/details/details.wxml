@@ -14,19 +14,19 @@
   <view class="bg-white margin-top-sm margin-left-xs margin-right-xs radius-15" wx:for="{{subFrined}}" wx:key="item">
     <view class="solid-bottom flex justify-between">
       <view class="flex">
-        <view class="cu-head bg-white round margin-left-sm margin-top" style="background-image:url({{item.avatar}});">
+        <view class="cu-head bg-white round margin-left-sm margin-top" style="background-image:url({{item.avatar}})">
         </view>
         <view class="padding">
           <view class="font-text">{{item.nickName}}</view>
           <view class="margin-top-sm" style="color: #a2a2a2">{{item.time}}</view>
         </view>
       </view>
-      <view class="margin-top-60 margin-right-sm">邀请明细({{item.renNum}}人)></view>
+      <view class="margin-top-60 margin-right">邀请明细({{item.renNum}}人)></view>
     </view>
 
     <view class="line-cut"></view>
 
-    <view class="flex padding justify-around text-center margin-top">
+    <view class="flex padding justify-around text-center margin-top margin-bottom">
       <view class="flex-sub">
         <view>订单量</view>
         <view class="font-text">{{item.ordeSize}}</view>

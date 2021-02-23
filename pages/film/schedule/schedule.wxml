@@ -1,0 +1,21 @@
+<!--pages/film/schedule/schedule.wxml-->
+<cu-custom bgColor="film-head text-white" isBack="{{true}}">
+  <view slot="content">{{place}}</view>
+</cu-custom>
+<view class="flex bg-white padding-top-sm padding-left-sm padding-bottom-sm justify-between align-center">
+  <view class="padding-right-100">
+    <view class="font-text text-cut-1">{{place}}</view>
+    <view class="font-text-sm margin-top-sm text-cut-1">{{full}}</view>
+  </view>
+  <view class="flex align-center">
+    <view class="margin-right">
+     <view class="line-ver"></view>
+    </view>
+    <view class="cuIcon-location lg text-red margin-right" style="font-size: 47rpx"></view>
+  </view>
+</view>
+
+<view class="film-pic-bg flex padding-sm bg-white">
+  <view class="film-pic-shade" style="background-image:url(https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg);"></view>
+  <view class="film-avatar cu-avatar" style="background-image:url(https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg);"></view>
+</view> 

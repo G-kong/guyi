@@ -1,4 +1,4 @@
-/* pages/film/components/filminfo.wxss */
+/* pages/film/schedule/schedule.wxss */
 .film-head {
     background-color: #ea3855;
 }
@@ -30,6 +30,7 @@
     width: 200rpx;
     height: 266rpx;
     font-size: 2.5em;
+    align-content: center;
   }
   
   .film-content {
@@ -59,9 +60,16 @@
     border-radius: 3rpx;
 }
 
+.line-ver {
+    margin: 0 auto;
+    width: 3rpx;
+    height: 90rpx;
+    background: #ebebeb;
+}
+
 .font-text {
     font-weight: 540;
-    font-size: 35rpx;
+    font-size: 32rpx;
     color: #3c3c3c;
 }
 
@@ -75,4 +83,15 @@
     width: 95%;
     height: 2rpx;
     background: #ebebeb;
+}
+
+.text-cut-1 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.padding-right-100 {
+	padding-right: 100rpx;
 }

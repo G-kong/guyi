@@ -66,15 +66,27 @@ Page({
   getFriend: function(e) {
     const that = this;
       that.setData({
-        tabCur: e.currentTarget.dataset.id
+        tabCur: e.currentTarget.dataset.id,
       });
+  },
+
+  formatStr: function(str) {
+    return str.substring(0,1) + "*"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {  
-    
+    const that = this;
+    for(const i in that.data.subFrined) {
+      var str = that.formatStr(that.data.subFrined[i].nickName);
+      that.data.subFrined[i].nickName = str;
+      console.log(str);
+      that.setData({
+        subFrined: that.data.subFrined
+      })
+    }
   },
 
   /**

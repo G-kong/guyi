@@ -34,7 +34,7 @@
 .line-cut {
   margin: 0 auto;
   width: 95%;
-  height: 1rpx;
+  height: 2rpx;
   background: #ebebeb;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .font-text {
-  font-weight: 550;
+  font-weight: 540;
   font-size: 35rpx;
   color: #3c3c3c;
 }

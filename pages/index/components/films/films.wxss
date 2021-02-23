@@ -27,3 +27,27 @@
 .film-name { 
     width: 150rpx;
 }
+
+.cu-vw {
+	position: relative;
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	font-size: 20rpx;
+    height: 44rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
+}
+
+.bg-vw {
+	background-color: #cccccc;
+	color: var(--white);
+}

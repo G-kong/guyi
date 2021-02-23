@@ -14,6 +14,10 @@
                 data-id="{{film.id}}" data-title="{{film.filmName}}" bindtap="goToFilmInfo">
             <view class="film-avatar  cu-avatar" style="background-image:url({{film.pic}});"></view>
             <view class="film-name text-xs text-cut padding-top-xs">{{ film.filmName }}</view>
+            <view class="film-name">
+                <view wx:if="{{filmType == 'hot'}}" class="margin-tb-xs cu-vw round bg-red">购票</view>
+                <view wx:if="{{filmType == 'soon'}}" class="margin-tb-xs cu-vw round bg-vw">暂无</view>
+            </view>
         </view>
     </view>
 </view>

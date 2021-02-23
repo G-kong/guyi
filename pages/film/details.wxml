@@ -2,8 +2,8 @@
 <cu-custom bgColor="film-head text-white" isBack="{{true}}">
   <view slot="content">{{title}}</view>
 </cu-custom>
-<scroll-view scroll-y class="scrollPage bg-white ">
-  <view class="film-pic-bg flex padding-sm">
+<scroll-view scroll-y class="scrollPage ">
+  <view class="film-pic-bg flex padding-sm bg-white">
     <view class="film-pic-shade" style="background-image:url({{ item.pic }});"></view>
     <view class="film-avatar cu-avatar" style="background-image:url({{ item.pic }});"></view>
     <view class="film-content flex flex-direction text-white padding-left-sm">
@@ -15,8 +15,37 @@
       <view class="text-xs text-cut-2">主演 {{ item.cast }}</view>
     </view>
   </view>
-  <view class="flex-sub film-intro padding-sm">
-    <view class="text-bold text-red">介绍</view>
-    <view class="padding-top-sm">{{item.intro}}</view>
+  <view class="flex-sub film-intro bg-white">
+    <!-- <view class="text-bold text-red">介绍</view>
+    <view class="padding-top-sm">{{item.intro}}</view> -->
+    <view class="flex date-list">
+      <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{fiveDays}}" bindtap="daySelect" data-id="{{index}}">
+        <view class="padding-sm">
+          {{fiveDays[index]}}
+        </view>
+        <view class="{{index==tapCut?'line' : ''}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bg-white padding-top-xs">
+    <view wx:key="item" wx:for="{{address}}" data-place="{{item.placeName}}" data-full="{{item.fullAddress}}" bindtap="goToSchedule">
+      <view class="flex padding-sm justify-between align-center">
+        <view class="margin-right-xl">
+          <view class="font-text">{{item.placeName}}</view>
+          <view class="font-text-sm">{{item.fullAddress}}</view>
+        </view>
+        <view class="margin-right-xl">
+          <view style="color: #a2a2a2">{{item.distance}}</view> 
+        </view>
+      </view>
+      <view class="margin-top-xs margin-bottom-xs">
+        <view class="line-cut"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="padding align-center">
+    <view class="text-center" style="color: #a2a2a2">已经到底了</view>
   </view>
 </scroll-view>

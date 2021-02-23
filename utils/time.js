@@ -35,6 +35,31 @@ const time = {
     var today = y + '-' + m + '-' + d;
 
     return dayOne + '~' + today;
+  },
+
+  //todate默认参数是当前日期，可以传入对应时间 todate格式为2018-10-05
+  getDates: (days, todate) => {
+    var dateArry = [];
+    for (var i = 0; i < days; i++) {
+      var dateObj = time.dateLater(todate, i);
+      dateArry.push(dateObj)
+    }
+    return dateArry;
+  },
+
+  dateLater: (dates, later) => {
+    let dateObj = {};
+    let show_day = new Array('周日', '周一', '周二', '周三', '周四', '周五', '周六');
+    let date = new Date(dates);
+    date.setDate(date.getDate() + later);
+    let day = date.getDay();
+    let yearDate = date.getFullYear();
+    let month = ((date.getMonth() + 1) < 10 ? ("0" + (date.getMonth() + 1)) : date.getMonth() + 1);
+    let dayFormate = (date.getDate() < 10 ? ("0" + date.getDate()) : date.getDate());
+    dateObj.time =  yearDate+'-'+ month + '-' + dayFormate;
+    dateObj.week = show_day[day];
+    return dateObj;
   }
+
 }
 export default time;

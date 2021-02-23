@@ -21,7 +21,8 @@
     "pages/film/details",
     "pages/myteam/myteam",
     "pages/myteam/newpoints/newpoints",
-    "pages/myteam/details/details"
+    "pages/myteam/details/details",
+    "pages/film/schedule/schedule"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,5 +42,5 @@
   },
   "sitemapLocation": "sitemap.json",
 
-  "entryPagePath": "pages/myteam/details/details"
+  "entryPagePath": "pages/film/schedule/schedule"
 }
