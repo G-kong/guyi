@@ -15,9 +15,9 @@
       <view class="text-xs text-cut-2">主演 {{ item.cast }}</view>
     </view>
   </view>
-  <view class="flex-sub film-intro bg-white">
-    <!-- <view class="text-bold text-red">介绍</view>
-    <view class="padding-top-sm">{{item.intro}}</view> -->
+  <!-- <view class="flex-sub film-intro bg-white">
+    <view class="text-bold text-red">介绍</view>
+    <view class="padding-top-sm">{{item.intro}}</view>
     <view class="flex date-list">
       <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{fiveDays}}" bindtap="daySelect" data-id="{{index}}">
         <view class="padding-sm">
@@ -43,7 +43,9 @@
         <view class="line-cut"></view>
       </view>
     </view>
-  </view>
+  </view> -->
+
+  <com-adress></com-adress>
 
   <view class="padding align-center">
     <view class="text-center" style="color: #a2a2a2">已经到底了</view>

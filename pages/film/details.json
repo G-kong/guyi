@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "com-adress": "./components/adress/adress"
+  },
   "navigationStyle": "custom"
 }
