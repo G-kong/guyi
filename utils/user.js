@@ -16,19 +16,69 @@ const user = {
       const ticket = user.store.Storage().getSync('ticket')
       //判断是否主小程序
       console.log(user.store.appid, user.store.Config().mainApp);
-      if (user.store.appid == user.store.Config().mainApp.appid) {
-        //跳转web授权
-        let authUrl = user.store.Config().webAuthUrl
-        // authUrl = "http://wmxg.gykj007.com/take-out/user/mini_auth"
+      if (user.store.appid == user.store.Config().mainApp.appid) {// //跳转web授权
+        // let authUrl = user.store.Config().webAuthUrl
+        // // authUrl = "http://wmxg.gykj007.com/take-out/user/mini_auth"
+        // // authUrl += "?miniTicket=" + ticket
         // authUrl += "?miniTicket=" + ticket
-        authUrl += "?miniTicket=" + ticket
-        authUrl += "&miniAppId=" + user.store.appid
-        authUrl += "&miniPath=" + "/pages/own/index"
-        wx.navigateTo({ 
-          url: '/pages/browser/index?url=' + encodeURIComponent(authUrl)
-        })
-       
-      } else {
+        // authUrl += "&miniAppId=" + user.store.appid
+        // authUrl += "&miniPath=" + "/pages/own/index"
+        // wx.navigateTo({ 
+        //   url: '/pages/browser/index?url=' + encodeURIComponent(authUrl)
+        // })
+        //获取unionid
+        wx.login({
+          success(res) {
+            let code = res.code; //登录凭证
+            if (code) {
+              //2、调用获取用户信息接口
+              wx.getUserInfo({
+                success: function (res) {
+                  console.log({
+                    encryptedData: res.encryptedData,
+                    iv: res.iv,
+                    code: code
+                  })
+                  //3.解密用户信息 获取unionid
+                  user.store.ApiServe().auth.decodeMiniUserInfo({
+                    appId: user.store.appid,
+                    code: code,
+                    encryptedData: res.encryptedData,
+                    iv: res.iv
+                  }).then((resp) => {
+                    if (resp.code==0) {
+                      let unionid = resp.data;
+                      //4.根据unionid绑定相关信息
+                      user.store.ApiServe().auth.bindUnionid({
+                        unionid: unionid
+                      }).then((resp) => {
+                        //5.刷新
+                        if (resp.code == 0) {
+                          user.refresh();
+                        } else {
+                          console.log('根据unionid绑定相关信息失败', resp.msg);
+                        }
+                      }, (error) => {
+                        console.log('根据unionid绑定相关信息失败')
+                      });
+                    } else {
+                      console.log('解密用户信息失败', resp.msg);
+                    }
+                  }, (error) => {
+                    console.log('解密用户信息失败')
+                  });
+                },
+                fail: function () {
+                  console.log('获取用户信息失败')
+                }
+              });
+
+            } else {
+              store.wxLogining = false
+              console.error('wx.login失败！' + res.errMsg)
+            }
+          }
+        });} else {
         //跳转主小程序
         user.store.Tools().Dialog({
           content: "请先进入主小程序授权登陆",

@@ -1,0 +1,108 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">轮播图</view>
+</cu-custom>
+<!-- <view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 全屏限高轮播
+  </view>
+  <view class="action">
+    <switch class="sm" bindchange="DotStyle"></switch>
+  </view>
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper> -->
+
+<!-- <view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 卡片式轮播
+  </view>
+</view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" bindchange="cardSwiper">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper> -->
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 卡片式轮播
+  </view>
+</view>
+
+<view class="banner-swiper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" current='{{swiperCurrent}}' 
+  indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" circular='{{circular}}' 
+  previous-margin="{{previousmargin}}" next-margin="{{nextmargin}}" bindchange="swiperChange" display-multiple-items="3">
+    <block wx:for="{{swiperList}}" wx:key="key"> 
+     <swiper-item>
+      <image src="{{item.url}}" class="slide-image{{index == swiperCurrent ? ' active' : ''}}" 
+      bindchange="chuangEvent" id="{{index}}" style="width: 200rpx; height: 280rpx"></image>
+     </swiper-item>
+    </block> 
+  </swiper>
+ </view> 
+
+ 
+<view class='switcher padding-bottom-xl'>
+  <!-- <view class='triangle'></view> -->
+  <swiper bindchange="handelSwpierChange" class='swiper' circular='{{circular}}'  display-multiple-items="3" previous-margin="270rpx" next-margin="-140rpx" current="{{swiperCurrent}}">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item class="swiper-item">
+            <view class="img-item">
+                <image class="{{swiperCurrent==item.id?'img-border':''}}" style="height: {{swiperCurrent==item.id?'265rpx':'260rpx'}}" src='{{item.url}}'></image>
+            </view>
+        </swiper-item>
+      </block>
+  </swiper>
+  <image src="{{swiperList[swiperCurrent].url}}" style="width:100%;height:320rpx;" class="backImg"></image>
+</view>
+ 
+
+
+<!-- <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" bindchange="cardSwiper">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <view class="film-pic-shade" style="background-image:url({{item.url}});"></view>
+      <view class="film-avatar cu-avatar" mode="aspectFill" style="background-image:url({{item.url}});"></view>
+      <view class="film-avatar cu-avatar algin-center">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      </view>
+    </view>
+  </swiper-item>
+</swiper> -->
+
+<!-- <swiper circular="true" bindchange="cardSwiper" class="flex">
+  <block wx:for="{{swiperList}}" wx:key="index">
+    <swiper-item class="{{cardCur==index?'cur':''}} tower-swiper" previous-margin="24px" next-margin="24px">
+      <view class="swiper-item">
+        <view class="film-pic-shade" style="background-image:url({{item.url}});"></view>
+        <view class="film-avatar cu-avatar" mode="aspectFill" style="background-image:url({{item.url}});"></view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> -->
+
+<!-- <view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 堆叠式轮播
+  </view>
+</view>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class="{{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="film-pic-shade" wx:if="{{cardCur==item.id}}" style="background-image:url({{item.url}});"></view>
+    <view class="tower-item flex padding-sm swiper-item">
+    <view class="swiper-item">
+      <image class="margin-right" src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      <view class="film-avatar cu-avatar" style="background-image:url({{item.url}});"></view>
+    </view>
+  </view>
+</view> -->

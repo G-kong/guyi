@@ -17,7 +17,7 @@
     </view>
   </view>
 </view>
-<view wx:else class="user-frame flex align-center padding-sm" bindtap="onLogin">
+<button open-type='getUserInfo' wx:else class="user-frame flex align-center padding-sm" bindtap="onLogin">
   <view class="cu-avatar lg bg-white round margin-left-sm" style="background-image:url('https://sswmapi.gykj007.com/wmxgimg/user_avatar.png');">
   </view>
   <view class="flex-sub padding-left ">
@@ -34,4 +34,4 @@
       </button>
     </view>
   </view>
-</view>
+</button>

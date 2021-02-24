@@ -43,36 +43,3 @@
   .film-intro{
       width: 100%;
   }
-
-.date-list{
-    position: relative;
-    width: 100%;
-    overflow: auto;
-    white-space: nowrap;
-}
-
-.line {
-    margin: 0 auto;
-    width: 100%;
-    height: 3rpx;
-    background: #ea3855;
-    border-radius: 3rpx;
-}
-
-.font-text {
-    font-weight: 540;
-    font-size: 35rpx;
-    color: #3c3c3c;
-}
-
-.font-text-sm {
-    font-size: 25rpx;
-    color: #a2a2a2;
-}
-
-.line-cut {
-    margin: 0 auto;
-    width: 95%;
-    height: 2rpx;
-    background: #ebebeb;
-}

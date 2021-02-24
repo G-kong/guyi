@@ -31,7 +31,7 @@
     height: 266rpx;
     font-size: 2.5em;
     align-content: center;
-  }
+}
   
   .film-content {
       /* position: absolute; */
@@ -94,4 +94,10 @@
 
 .padding-right-100 {
 	padding-right: 100rpx;
+}
+
+.tower-swiper .tower-item {
+    transform: scale(calc(0.5 + var(--index) / 10));
+    margin-left: calc(var(--left) * 100rpx - 150rpx);
+    z-index: var(--index);
 }

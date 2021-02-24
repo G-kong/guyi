@@ -43,7 +43,20 @@ const auth = {
         method: 'get',
         params,
         ticket: true
-    })
+    }),
+  decodeMiniUserInfo: (data) => request({
+    url: '/applet/decodeMiniUserInfo',
+    method: 'post',
+    data,header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
+  }),
+  bindUnionid: (params) => request({
+    url: '/applet/bindUnionid',
+    method: 'get',
+    params,
+    ticket: true
+  })
   }
 
   export default auth;
