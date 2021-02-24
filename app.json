@@ -43,5 +43,5 @@
   },
   "sitemapLocation": "sitemap.json",
 
-  "entryPagePath": "pages/film/swiper/swiper"
+  "entryPagePath": "pages/film/schedule/schedule"
 }
