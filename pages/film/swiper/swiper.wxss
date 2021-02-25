@@ -125,3 +125,11 @@ overflow: hidden;
 .img-border {
 	border: 4rpx #fffdf8 solid;
 }
+
+.line {
+	/* margin: 0 auto; */
+	width: 2rpx;
+	height: 25rpx;
+	background: #ea3855;
+	/* border-radius: 3rpx; */
+}

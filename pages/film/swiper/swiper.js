@@ -1,7 +1,7 @@
 Page({
   data: {
       //轮播图
-    swiperCurrent:0,
+    swiperCurrent:7,
     cardCur: 0,
     swiperList: [{
       id: 0,

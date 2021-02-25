@@ -15,11 +15,6 @@
   </view>
 </view>
 
-<!-- <view class="film-pic-bg flex padding-sm bg-white">
-  <view class="film-pic-shade" style="background-image:url(https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg);"></view>
-  <view class="film-avatar cu-avatar" style="background-image:url(https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg);"></view>
-</view>  -->
-
 <view class='switcher'>
   <!-- <view class='triangle'></view> -->
   <swiper bindchange="handelSwpierChange" class='swiper' circular='{{circular}}'  display-multiple-items="3" previous-margin="270rpx" next-margin="-140rpx" current="{{swiperCurrent}}">
@@ -31,17 +26,52 @@
         </swiper-item>
       </block>
   </swiper>
-  <image src="{{swiperList[swiperCurrent].url}}" style="width:100%;height:640rpx;" class="backImg"></image>
+  <image src="{{swiperList[swiperCurrent].url}}" style="width:100%;height:100%;" class="backImg"></image>
 </view>
 
-<view class="bg-white padding">
-  <view class="flex padding-xs margin-left-xl">
-    <view>你好，李焕英</view>
-    <view class="margin-left-sm">8.1分</view>
+<view class="bg-white padding-sm">
+  <view class="flex padding-bottom-xs justify-center">
+    <view class="font-text-xl">你好，李焕英</view>
+    <view class="margin-left-sm font-sco">8.1分</view>
   </view>
-  <view class="flex">
+  <view class="flex justify-center font-text-sm">
     <view class="margin-right">128分钟</view>
+    <view class="line-cut margin-right"></view>
     <view class="margin-right">喜剧</view>
-    <view class="margin-right">贾玲/张小斐/沈腾</view>
+    <view class="line-cut margin-top-xs margin-right"></view>
+    <view class="margin-right">贾玲 / 张小斐 / 沈腾</view>
+  </view>
+</view>
+
+<view class="line-gary"></view>
+<view class="flex-sub film-intro bg-white">
+  <view class="flex date-list">
+    <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{fiveDays}}" bindtap="daySelect" data-id="{{index}}">
+      <view class="padding" style="{{index>=3?'margin-top: 5rpx':''}}">
+        {{fiveDays[index]}}
+      </view>
+      <view class="{{index==tapCut?'line' : ''}}"></view>
+    </view>
+  </view>
+</view>
+
+<view class="bg-white">
+  <view class="margin-left-20 line-gary"></view>
+  <view class="flex align-center padding-bottom-sm">
+    <view class="padding-left-sm padding-top">
+      <view class="font-text-xl">19:00</view>
+      <view class="font-text-sm margin-top-xs" style="width: 120rpx">21:00 散场</view>
+    </view>
+    <view class="padding-top-sm margin-left-xl">
+      <view class="">国语 2D</view>
+      <view class="text-cut-1 font-text-sm margin-top-sm">2号厅（请出示健康码附加按地方决赛的飞机撒地方）</view>
+    </view>
+    <view class="padding-top-sm margin-left" style="width: 368rpx">
+      <view class="flex justify-end font-text-mn">55.5元</view>
+      <view class="font-text-sm margin-top-xs" style="text-decoration:line-through;">市场价33.3元</view>
+    </view>
+    <view class="margin-right-sm margin-left-sm">
+      <view class="margin-top-sm cu-vw round bg-red">特惠购票</view>
+    </view>
   </view>
 </view>

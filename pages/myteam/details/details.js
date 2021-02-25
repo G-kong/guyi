@@ -19,48 +19,7 @@ Page({
       }
     ],
 
-    subFrined: [
-      {
-        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
-        nickName: "G-kong",
-        time: "2020-02-20 20:20",
-        renNum: "30",
-        ordeSize: "20",
-        money: "20"
-      },
-      {
-        avatar: "http://thirdwx.qlogo.cn/mmopen/NhwzVYNvSSRlibBQGVoM5ibibyXKcicHibjthqVKhxPDIibWd0reyf29hloKPWGbCsQLmGr7WwDTS0XAZuldRcVNmF0iaxibwCgFgcicD/132",
-        nickName: "苦桉树",
-        time: "2020-02-20 20:20",
-        renNum: "0",
-        ordeSize: "10",
-        money: "10"
-      },
-      {
-        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
-        nickName: "G-kong",
-        time: "2020-02-20 20:20",
-        renNum: "0",
-        ordeSize: "20",
-        money: "20"
-      },
-      {
-        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
-        nickName: "G-kong",
-        time: "2020-02-20 20:20",
-        renNum: "0",
-        ordeSize: "20",
-        money: "20"
-      },
-      {
-        avatar: "http://thirdwx.qlogo.cn/mmopen/V0mhkIwf3EHzVyBwMaCR3S6HxwpohFvPn2J8Jib01QgyXOD5bBfaSclvia66nxia5RXeab0wMeQBChXmicrk7fnNtE2HyruZfCQg/132",
-        nickName: "G-kong",
-        time: "2020-02-20 20:20",
-        renNum: "0",
-        ordeSize: "20",
-        money: "20"
-      },
-    ]
+    subFrined: []
   },
 
   getFriend: function(e) {
@@ -68,6 +27,7 @@ Page({
       that.setData({
         tabCur: e.currentTarget.dataset.id,
       });
+      that.getUserInviteDetailList(that.data.tabCur);
   },
 
   formatStr: function(str) {
@@ -79,14 +39,7 @@ Page({
    */
   onLoad: function (options) {  
     const that = this;
-    for(const i in that.data.subFrined) {
-      var str = that.formatStr(that.data.subFrined[i].nickName);
-      that.data.subFrined[i].nickName = str;
-      console.log(str);
-      that.setData({
-        subFrined: that.data.subFrined
-      })
-    }
+    that.getUserInviteDetailList(that.data.tabCur);
   },
 
   /**
@@ -135,7 +88,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   },
 
   /**
@@ -144,5 +97,30 @@ Page({
   onShareTimeline: function () {
 
   },
+
+  /**
+   * 获取团队数据明细
+   */
+  getUserInviteDetailList: function (inviteType) {
+    const that = this;
+    team.getUserInviteDetailList({
+      inviteType: inviteType
+    }).then((resp) => {
+      that.setData({
+        subFrined: resp.data
+      });
+      for(const i in that.data.subFrined) {
+        var str = that.formatStr(that.data.subFrined[i].nickname);
+        that.data.subFrined[i].nickname = str;
+        // console.log(str);
+        that.setData({
+          subFrined: that.data.subFrined
+        })
+      }
+    }, (err) => {
+      store.Tools().Toast(err.msg)
+      // console.log('err', err)
+    })
+  }
 
 })

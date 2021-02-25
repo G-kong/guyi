@@ -7,98 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [{
-      time: "2021-02-19",
-      subNum: 19,
-      ssubNum: 19,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    },
-    {
-      time: "2021-02-20",
-      subNum: 20,
-      ssubNum: 20,
-    }]
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {  
-    
+    const that = this;
+    that.getUserInviteList();
   },
 
   /**
@@ -156,5 +73,22 @@ Page({
   onShareTimeline: function () {
 
   },
+
+  /**
+   * 获取用户新增数据
+   */
+  getUserInviteList: function() {
+    team.getUserInviteList({
+
+    }).then((resp) => {
+      console.log("返回数据" + resp.data);
+      this.setData({
+        list: resp.data
+      })
+    }, (err) => {
+      store.Tools().Toast(err.msg)
+      // console.log('err', err)
+    })
+  }
 
 })

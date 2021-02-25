@@ -60,11 +60,26 @@
     border-radius: 3rpx;
 }
 
+.line-gary {
+    margin: 0 auto;
+    width: 100%;
+    height: 3rpx;
+    background: #d4d4d4;
+    border-radius: 3rpx;
+}
+
 .line-ver {
     margin: 0 auto;
     width: 3rpx;
     height: 90rpx;
     background: #ebebeb;
+}
+
+.line-cut {
+	width: 2rpx;
+	height: 23rpx;
+    background: #a2a2a2;
+    margin-top: 8rpx;
 }
 
 .font-text {
@@ -73,17 +88,27 @@
     color: #3c3c3c;
 }
 
+.font-sco {
+    font-size: 30rpx;
+    color: #f2cd5c;
+}
+
+.font-text-xl {
+    font-weight: 550;
+    font-size: 34rpx;
+    color: #121212;
+}
+
+.font-text-mn {
+    font-weight: 550;
+    font-size: 32rpx;
+    color: #cb4c4c;
+}
+
 .font-text-sm {
     font-size: 25rpx;
     color: #a2a2a2;
 }
-
-/* .line-cut {
-    margin: 0 auto;
-    width: 95%;
-    height: 2rpx;
-    background: #ebebeb;
-} */
 
 .text-cut-1 {
 	display: -webkit-box;
@@ -136,8 +161,30 @@
 	overflow: hidden;
 }
 
-.father{
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
+.margin-left-20 {
+    margin-left: 20rpx;
+}
+
+.margin-right-100 {
+    margin-right: 70rpx;
+}
+
+.cu-vw {
+	position: relative;
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	font-size: 23rpx;
+    height: 60rpx;
+    width: 128rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
 }

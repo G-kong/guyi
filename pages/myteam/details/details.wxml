@@ -17,11 +17,11 @@
         <view class="cu-head bg-white round margin-left-sm margin-top" style="background-image:url({{item.avatar}})">
         </view>
         <view class="padding">
-          <view class="font-text">{{item.nickName}}</view>
-          <view class="margin-top-sm" style="color: #a2a2a2">{{item.time}}</view>
+          <view class="font-text">{{item.nickname}}</view>
+          <view class="margin-top-sm" style="color: #a2a2a2">{{item.inviteTime}}</view>
         </view>
       </view>
-      <view class="margin-top-60 margin-right">邀请明细({{item.renNum}}人)></view>
+      <view class="margin-top-60 margin-right">邀请数量({{item.inviteCount}}人)</view>
     </view>
 
     <view class="line-cut"></view>
@@ -29,11 +29,11 @@
     <view class="flex padding justify-around text-center margin-top margin-bottom">
       <view class="flex-sub">
         <view>订单量</view>
-        <view class="font-text">{{item.ordeSize}}</view>
+        <view class="font-text">{{item.orderCount}}</view>
       </view>
       <view class="flex-sub">
         <view>贡献佣金</view>
-        <view class="font-text">{{item.money}}</view>
+        <view class="font-text">{{item.sinviteCount}}</view>
       </view>
     </view>
 

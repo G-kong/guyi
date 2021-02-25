@@ -6,9 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperCurrent:0,
+    swiperCurrent:7,
     place: '',
     full: '',
+    circular: true,
+    tapCut: 0,
+    fiveDays: [],
     swiperList: [{
       id: 0,
       type: 'image',
@@ -42,15 +45,6 @@ Page({
       type: 'image',
       url: 'https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg'
     }],
-    indicatorDots: false,
-    autoplay: false,
-    interval: 2000,
-    duration: 1000,
-    circular: true,
-    beforeColor: "white",//指示点颜色 
-    afterColor: "coral",//当前选中的指示点颜色 
-    previousmargin:'40px',//前边距
-    nextmargin:'40px',//后边距
   },
 
   // current改变
@@ -59,6 +53,55 @@ Page({
       swiperCurrent: e.detail.current,
       imgUrl: this.data.swiperList[e.detail.current]
     })
+  },
+
+  purchDate: function(e) {
+    const that = this;
+    let time = store.Time().getTodayDate();
+    let date = store.Time().getDates(7, time);
+    console.log(date);
+
+    // var fiveDay = [{},{},{},{},{},{}];
+    var fiveDay = [];
+    for(let i in date) {
+      if (i < 6) {
+        switch (i) {
+          case '0':
+            // fiveDay[i].id = i;
+            fiveDay[i] = "今天" + date[i].time;
+            break;
+          case '1':
+            // fiveDay[i].id = i;
+            fiveDay[i] = "明天" + date[i].time;
+            break;
+          case '2':
+            // fiveDay[i].id = i;
+            fiveDay[i] = "后天" + date[i].time;
+            break;
+          case '3':
+          case '4':
+          case '5':
+            // fiveDay[i].id = i;
+            fiveDay[i] = ' ' + date[i].time;
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    console.log(fiveDay);
+    that.setData({
+      fiveDays: fiveDay
+    })
+    console.log(that.data.fiveDays)
+  },
+
+  daySelect: function(e) {
+    const that = this;
+    that.setData({
+      tapCut: e.currentTarget.dataset.id,
+    })
+    // console.log(that.data.tapCut);
   },
 
   /**
@@ -70,7 +113,8 @@ Page({
     that.setData({
       place: options.place,
       full: options.full
-    })
+    });
+    that.purchDate();
   },
 
 

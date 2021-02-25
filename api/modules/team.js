@@ -14,6 +14,20 @@ const team = {
       method: 'get',
       params,
       ticket: true
+    }),
+    //获取用户新增数据
+    getUserInviteList: (params) => request({
+      url: '/applet/getUserInviteList',
+      method: 'get',
+      params,
+      ticket: true
+    }),
+    //获取团队数据明细
+    getUserInviteDetailList: (params) => request({
+      url: '/applet/getUserInviteDetailList',
+      method: 'get',
+      params,
+      ticket: true
     })
   }
 
