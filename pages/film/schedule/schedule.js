@@ -45,6 +45,43 @@ Page({
       type: 'image',
       url: 'https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg'
     }],
+    film: {
+      id: 0,
+      name: "你好，李焕英",
+      score: "8.1分",
+      time: "128分钟",
+      tyte: "喜剧",
+      actor: "贾玲 / 张小斐 / 沈腾"
+    },
+    pieceList: [
+      {
+        id: "0",
+        startTime: "19:00",
+        endTime: "21:00散场",
+        language: "国语 2D",
+        fewNumber: "2号厅（请出示健康码,进场带口罩）",
+        money: "55.5元",
+        marPri: "市场价88.8元"
+      },
+      {
+        id: "0",
+        startTime: "19:00",
+        endTime: "21:00散场",
+        language: "国语 2D",
+        fewNumber: "2号厅（请出示健康码,进场带口罩）",
+        money: "55.5元",
+        marPri: "市场价88.8元"
+      },
+      {
+        id: "0",
+        startTime: "19:00",
+        endTime: "21:00散场",
+        language: "国语 2D",
+        fewNumber: "2号厅（请出示健康码,进场带口罩）",
+        money: "55.5元",
+        marPri: "市场价88.8元"
+      }
+    ]
   },
 
   // current改变

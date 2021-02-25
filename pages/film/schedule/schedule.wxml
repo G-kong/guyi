@@ -31,15 +31,15 @@
 
 <view class="bg-white padding-sm">
   <view class="flex padding-bottom-xs justify-center">
-    <view class="font-text-xl">你好，李焕英</view>
-    <view class="margin-left-sm font-sco">8.1分</view>
+    <view class="font-text-xl">{{film.name}}</view>
+    <view class="margin-left-sm font-sco">{{film.score}}</view>
   </view>
   <view class="flex justify-center font-text-sm">
-    <view class="margin-right">128分钟</view>
+    <view class="margin-right">{{film.time}}</view>
     <view class="line-cut margin-right"></view>
-    <view class="margin-right">喜剧</view>
+    <view class="margin-right">{{film.tyte}}</view>
     <view class="line-cut margin-top-xs margin-right"></view>
-    <view class="margin-right">贾玲 / 张小斐 / 沈腾</view>
+    <view class="margin-right">{{film.actor}}</view>
   </view>
 </view>
 
@@ -56,22 +56,24 @@
 </view>
 
 <view class="bg-white">
-  <view class="margin-left-20 line-gary"></view>
-  <view class="flex align-center padding-bottom-sm">
-    <view class="padding-left-sm padding-top">
-      <view class="font-text-xl">19:00</view>
-      <view class="font-text-sm margin-top-xs" style="width: 120rpx">21:00 散场</view>
-    </view>
-    <view class="padding-top-sm margin-left-xl">
-      <view class="">国语 2D</view>
-      <view class="text-cut-1 font-text-sm margin-top-sm">2号厅（请出示健康码附加按地方决赛的飞机撒地方）</view>
-    </view>
-    <view class="padding-top-sm margin-left" style="width: 368rpx">
-      <view class="flex justify-end font-text-mn">55.5元</view>
-      <view class="font-text-sm margin-top-xs" style="text-decoration:line-through;">市场价33.3元</view>
-    </view>
-    <view class="margin-right-sm margin-left-sm">
-      <view class="margin-top-sm cu-vw round bg-red">特惠购票</view>
+  <view wx:for="{{pieceList}}" wx:key="index" wx:for-item="picec">
+    <view class="margin-left-20 line-gary"></view>
+    <view class="flex align-center padding-bottom-sm">
+      <view class="padding-left-sm padding-top">
+        <view class="font-text-xl">{{picec.startTime}}</view>
+        <view class="font-text-sm margin-top-xs" style="width: 120rpx">{{picec.endTime}}</view>
+      </view>
+      <view class="padding-top-sm margin-left-xl">
+        <view class="">{{picec.language}}</view>
+        <view class="text-cut-1 font-text-sm margin-top-sm">{{picec.fewNumber}}</view>
+      </view>
+      <view class="padding-top-sm margin-left" style="width: 368rpx">
+        <view class="flex justify-end font-text-mn">{{picec.money}}</view>
+        <view class="flex justify-end font-text-sm margin-top-xs" style="text-decoration:line-through;">{{picec.marPri}}</view>
+      </view>
+      <view class="margin-right-sm margin-left-sm">
+        <view class="margin-top-sm cu-vw round bg-red">特惠购票</view>
+      </view>
     </view>
   </view>
 </view>
