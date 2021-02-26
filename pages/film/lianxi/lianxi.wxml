@@ -1,0 +1,78 @@
+<!--pages/film/lianxi/lianxi.wxml-->
+<!--电影信息-->
+<view class='info'>
+	<view class='movieName'>{{movie.filmName}}</view>
+	<view class='planDetail'>{{movie.startDate}} {{movie.startTime}}</view>
+	<!-- 使用时注释dom view class='about' 即可 .about css 在app.wxss中 -->
+</view>
+<!--座位示例图  -->
+<view class="seatDemosBack" wx:if="{{loadComplete}}">
+	<view class="seatDemos">
+		<block wx:for="{{seatTypeList}}" wx:for-index="index" wx:for-item="seatTypeItem" wx:key="index">
+			<view class="seatDemo">
+				<image class="seatDemoItem" mode="widthFix" src="{{seatTypeItem.icon}}"></image>
+				<view class="seatDemoItem"> {{seatTypeItem.name}}</view>
+			</view>
+		</block>
+	</view>
+</view>
+<movable-area scale-area="true" class="defaultArea" style="height:{{seatArea}}px; width: 750rpx;">
+	<movable-view class='movableOne' bindscale="handleScale" style="height:{{seatArea}}px; width: 750rpx;" scale="true" direction="all" scale-max="2" scale-value="1" out-of-bounds="true">
+		<view class='seatArea' id="seatView" style='width:{{seatScaleHeight * maxX}}px;height:{{seatScaleHeight * maxY}}px'>
+			<view class='hallName'>
+				<text>{{movie.hallName}}</text>
+			</view>
+			<view class='x' wx:for="{{seats}}" wx:key="keys" wx:for-item="item" wx:for-index="idx">
+				<view class='y' wx:for="{{item.columns}}" wx:key="items" wx:for-index="idy" wx:for-item="items" style="left:{{(items.columnId-1)* seatScaleHeight}}px;top:{{(item.rowNum-1) * seatScaleHeight}}px;width: {{seatScaleHeight}}px;height: {{seatScaleHeight}}px">
+ 
+					<image wx:if="{{items.status!='EMPTY'&&items.status!='CAN_SELL'}}" class="img" src='{{items.icon}}' data-rowid='{{item.rowId}}' data-flag="{{items.flag}}" data-index="{{idy}}" data-columnid='{{items.columnId}}'></image>
+					<image wx:elif="{{items.status=='EMPTY'}}" class="img" src=''></image>
+					<image wx:elif="{{items.status=='CAN_SELL'}}" class="img" bind:tap='selectSeat' src='{{items.icon}}' data-rowid='{{item.rowId}}'  data-flag="{{items.flag}}"   data-index="{{idy}}" data-columnid='{{items.columnId}}'></image>
+ 
+				</view>
+			</view>
+		</view>
+	</movable-view>
+</movable-area>
+ 
+ 
+<!--下部分座位示例图  -->
+<!-- 用户选中的座位详情 -->
+<view class='selectSeatInfo' hidden='{{hidden}}'>
+	<scroll-view class="scrollSeat" scroll-x style="width: 100%">
+		<!-- 普通座位 -->
+		<block wx:for="{{selectedSeat}}" wx:key="id" wx:for-item="selectedSeatItem">
+			<view class='scrollItem' bindtap='cancelSeat' data-rowid="{{selectedSeatItem.rowid}}" data-columnid="{{selectedSeatItem.columnid}}">
+				<view class='scrollTextTop'>
+					{{selectedSeatItem.rowid}}排{{selectedSeatItem.columnid}}座
+				</view>
+				<view class='scrollTextBottom'>
+					￥{{price}}
+				</view>
+				<image src='/assets/images/close.png'></image>
+			</view>
+		</block>
+	</scroll-view>
+</view>
+<!-- 快速选座 -->
+<view class='selectSeatInfo' hidden='{{!hidden}}'>
+	<scroll-view class="scrollSeat" scroll-x style="width: 100%">
+		<view class='quickItem' bindtap='quickSeat' data-num='1'>
+			1人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='2'>
+			2人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='3'>
+			3人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='4'>
+			4人座
+		</view>
+	</scroll-view>
+</view>
+<!-- 以下是确认选座 -->
+<view class='orderComfirm' style="flex-direction:row;">
+	<view class='comfirm' bindtap='confirmHandle'>￥
+		<text>{{totalPrice}}</text> 元 确认选座</view>
+</view>

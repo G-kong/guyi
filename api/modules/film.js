@@ -24,6 +24,14 @@ const film = {
       url: '/applet/getFilmById',
       method: 'get',
       params
+    }),
+    //获取某电影的电影院
+    getFilmShowList: (data) => request({
+      url: '/applet/getFilmShowList',
+      method: 'post',
+      data,header: {
+        'content-type': 'application/json'
+      }
     })
   }
 

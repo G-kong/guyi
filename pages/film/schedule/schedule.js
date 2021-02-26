@@ -64,22 +64,22 @@ Page({
         marPri: "市场价88.8元"
       },
       {
-        id: "0",
-        startTime: "19:00",
-        endTime: "21:00散场",
+        id: "1",
+        startTime: "8:00",
+        endTime: "11:00散场",
         language: "国语 2D",
-        fewNumber: "2号厅（请出示健康码,进场带口罩）",
-        money: "55.5元",
+        fewNumber: "3号厅（请出示健康码,进场带口罩）",
+        money: "33.5元",
         marPri: "市场价88.8元"
       },
       {
-        id: "0",
-        startTime: "19:00",
-        endTime: "21:00散场",
-        language: "国语 2D",
-        fewNumber: "2号厅（请出示健康码,进场带口罩）",
-        money: "55.5元",
-        marPri: "市场价88.8元"
+        id: "2",
+        startTime: "12:00",
+        endTime: "15:00散场",
+        language: "国语 3D",
+        fewNumber: "5号厅（请出示健康码,进场带口罩）",
+        money: "44.5元",
+        marPri: "市场价55.8元"
       }
     ]
   },

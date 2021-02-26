@@ -1,0 +1,15 @@
+/* pages/film/cinema/cinema.wxss */
+.film-head {
+  background-color: #ea3855;
+}
+
+.text-cut-1 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.bg-color {
+  background-color: #f2f1f6;
+}

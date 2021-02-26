@@ -1,5 +1,6 @@
 // pages/film/components/adress/adress.js
 const store = getApp().globalData;
+const film = store.ApiServe().film;
 Component({
   options: {
     addGlobalClass: true,
@@ -9,104 +10,96 @@ Component({
    */
   data: {
     tapCut: 0,
-    fiveDays: [],
-    address: [
-      {
-        placeName: '福州仓山万达广场店',
-        fullAddress: '福州市仓山区浦上大道万达广场2号门四层',
-        distance: '1.31km'
-      },
-      {
-        placeName: '福州仓山万达广场店',
-        fullAddress: '福州市仓山区浦上大道万达广场2号门四层诶哦去他家诶感觉舒服滴工具柜给冻豆腐国家搜地方',
-        distance: '1.31km'
-      },
-      {
-        placeName: '福州仓山万达广场店',
-        fullAddress: '福州市仓山区浦上大道万达广场2号门四层',
-        distance: '1.31km'
-      },
-      {
-        placeName: '福州仓山万达广场店',
-        fullAddress: '福州市仓山区浦上大道万达广场2号门四层',
-        distance: '1.31km'
-      },
-    ]
+    date: [],
+    showList: [],
+    address: []
   },
   created() {
-   
+    this.mapViewTap();
   },
 
   methods: {
-    purchDate: function(e) {
-      const that = this;
-      let time = store.Time().getTodayDate();
-      let date = store.Time().getDates(7, time);
-      console.log(date);
-  
-      // var fiveDay = [{},{},{},{},{},{}];
-      var fiveDay = [];
-      for(let i in date) {
-        let d = date[i].time.split('-');
-        let r = d[1] + '月' + d[2] + '日';
-        if (i < 6) {
-          switch (i) {
-            case '0':
-              // fiveDay[i].id = i;
-              fiveDay[i] = "今天" + r;
-              break;
-            case '1':
-              // fiveDay[i].id = i;
-              fiveDay[i] = "明天" + r;
-              break;
-            case '2':
-              // fiveDay[i].id = i;
-              fiveDay[i] = "后天" + r;
-              break;
-            case '3':
-            case '4':
-            case '5':
-              // fiveDay[i].id = i;
-              fiveDay[i] = date[i].week + r;
-              break;
-            default:
-              break;
-          }
-        }
-      }
-      console.log(fiveDay);
-      that.setData({
-        fiveDays: fiveDay
-      })
-      console.log(that.data.fiveDays)
-    },
-
-    daySelect: function(e) {
+    daySelect: function (e) {
       const that = this;
       that.setData({
         tapCut: e.currentTarget.dataset.id,
       })
       // console.log(that.data.tapCut);
+      for (let i in that.data.showList) {
+        if (i == that.data.tapCut) {
+          that.setData({
+            address: that.data.showList[i],
+          })
+        }
+      }
     },
 
-    goToSchedule: function(event) {
+    goToSchedule: function (event) {
       const place = event.currentTarget.dataset.place;
       const full = event.currentTarget.dataset.full;
       console.log("place:" + place + " full:" + full);
       wx.navigateTo({
-        url: './schedule/schedule?place='+place+'&full='+full,
+        url: './schedule/schedule?place=' + place + '&full=' + full,
       })
     },
+
+    /**
+     * 获取某电影的电影院
+     * @param {*} body
+     */
+    getFilmShowList: function(body) {
+      const that = this;
+      film.getFilmShowList({
+        filmId: 123031,
+        cityId: 14
+      }).then((resp) => {
+        console.log("获取某电影的电影院" + resp.data);
+        var days = [];
+        var show = [];
+        for (let i in resp.data) {
+          days[i] = resp.data[i].date;
+          show[i] = resp.data[i].shouList;
+        }
+        that.setData({
+          date: days,
+          showList: show,
+          address: show[0],
+        })
+        console.log("date:" + that.data.date);
+        console.log("showList:" + that.data.showList);
+      },(err) => {
+        store.Tools().Toast(err.msg)
+        // console.log('err', err)
+      })
+    },
+
+    mapViewTap: function() {
+      wx.getLocation({
+        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+        success: function(res) {
+          console.log(res)
+          wx.openLocation({
+            latitude: res.latitude,
+            longitude: res.longitude,
+            scale: 28
+          })
+          console.log("latitude:" + latitude);
+          console.log("longitude:" + longitude);
+        }
+      })
+    }
+
   },
-  
+    
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
       const that = this;
-      that.purchDate();
+      console.log("获取某电影的电影院");
+      that.getFilmShowList();
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行
     },
-  },
+  }
 })

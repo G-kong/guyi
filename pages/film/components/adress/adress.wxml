@@ -1,9 +1,9 @@
 <!--pages/film/components/adress/adress.wxml-->
 <view class="flex-sub film-intro bg-white">
   <view class="flex date-list">
-    <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{fiveDays}}" bindtap="daySelect" data-id="{{index}}">
+    <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{date}}" bindtap="daySelect" data-id="{{index}}">
       <view class="padding-sm">
-        {{fiveDays[index]}}
+        {{date[index]}}
       </view>
       <view class="{{index==tapCut?'line' : ''}}"></view>
     </view>
@@ -14,11 +14,11 @@
   <view wx:key="item" wx:for="{{address}}" data-place="{{item.placeName}}" data-full="{{item.fullAddress}}" bindtap="goToSchedule">
     <view class="flex padding-sm justify-between align-center">
       <view class="margin-right-xl">
-        <view class="font-text">{{item.placeName}}</view>
-        <view class="font-text-sm">{{item.fullAddress}}</view>
+        <view class="font-text">{{item.cinemaName}}</view>
+        <view class="font-text-sm">{{item.address}}</view>
       </view>
       <view class="margin-right-xl">
-        <view style="color: #a2a2a2">{{item.distance}}</view> 
+        <view style="color: #a2a2a2">{{item.cinemaId}}</view> 
       </view>
     </view>
     <view class="margin-top-xs margin-bottom-xs">

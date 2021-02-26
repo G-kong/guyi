@@ -1,0 +1,7 @@
+<!--pages/film/lianxi/lianxii.wxml-->
+<!--电影信息-->
+<view class='info'>
+	<view class='movieName'>{{movie.filmName}}你好，李焕英</view>
+	<view class='planDetail'>{{movie.startDate}} {{movie.startTime}}2021-02-25 20:20</view>
+	<!-- 使用时注释dom view class='about' 即可 .about css 在app.wxss中 -->
+</view>

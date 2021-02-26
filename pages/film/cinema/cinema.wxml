@@ -1,0 +1,17 @@
+<!--pages/film/cinema/cinema.wxml-->
+<cu-custom bgColor="film-head text-white" isBack="{{true}}">
+  <view class="text-cut" slot="content">福州仓山万达广场店</view>
+</cu-custom>
+
+<view class="bg-white padding">
+  <view>你好，李焕英</view>
+  <view class="flex padding-top-xs">
+    <view class="margin-right-sm">2021-02-28</view>
+    <view class="margin-right-sm">22:00~00:22</view>
+    <view>(中文 2D)</view>
+  </view>
+</view>
+
+<view class="align-center bg-color">
+  <view>5号厅</view>
+</view>

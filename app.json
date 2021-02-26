@@ -23,7 +23,8 @@
     "pages/myteam/newpoints/newpoints",
     "pages/myteam/details/details",
     "pages/film/schedule/schedule",
-    "pages/film/swiper/swiper"
+    "pages/film/swiper/swiper",
+    "pages/film/cinema/cinema"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -43,5 +44,5 @@
   },
   "sitemapLocation": "sitemap.json",
 
-  "entryPagePath": "pages/film/schedule/schedule"
+  "entryPagePath": "pages/film/details"
 }

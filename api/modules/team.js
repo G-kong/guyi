@@ -28,7 +28,7 @@ const team = {
       method: 'get',
       params,
       ticket: true
-    })
-  }
+    }),
+}
 
   export default team;
