@@ -202,31 +202,43 @@ const tools = {
         tools.getLocation_baidu().then((position) => {
           resolve(position)
         }, (err) => {
-          wx.getLocation({
-            type: 'wgs84', // 默认wgs84
-            success: function (res) {
-              // console.log('地理位置获取成功!')
-              let position = {
-                "type": 'wx',
-                "lat": res.latitude,
-                "lon": res.longitude
-              }
-              tools.store.Storage().setSync("position", position, 24 * 60 * 60);
-              resolve(position)
-            },
-            fail: function (res) {
-              // console.log('地理位置获取失败!')
-              reject()
-            },
-            complete: function () {
-              // console.log('地理位置获取结束!')
-            }
+          tools.getLocation_wx().then((position) => {
+            resolve(position)
+          }, (err) => {
+            reject()
           })
         })
       })
     }
     return wxLocation()
 
+  },
+  getLocation_wx() {
+    var location = function () {
+      return new Promise((resolve, reject) => {
+        wx.getLocation({
+          type: 'wgs84', // 默认wgs84
+          success: function (res) {
+            // console.log('地理位置获取成功!')
+            let position = {
+              "type": 'wx',
+              "lat": res.latitude,
+              "lon": res.longitude
+            }
+            tools.store.Storage().setSync("position", position, 24 * 60 * 60);
+            resolve(position)
+          },
+          fail: function (res) {
+            // console.log('地理位置获取失败!')
+            reject()
+          },
+          complete: function () {
+            // console.log('地理位置获取结束!')
+          }
+        })
+      })
+    }
+    return location()
   },
   getLocation_baidu() {
     var baiduLocation = function () {
@@ -281,7 +293,7 @@ const tools = {
     var rand = Math.random();
     return Math.round(min + rand * (max - min));
   },
-  rmoney(money){
+  rmoney(money) {
     // 金额格式化
     money = parseFloat(money).toFixed(2).toString().split('').reverse().join('').replace(/(\d{3})/g, '$1,').replace(/\,$/, '').split('').reverse().join('')
     return money
@@ -477,6 +489,47 @@ const tools = {
         break
     }
     return num
+  },
+  openConfirm: () => {
+    return new Promise((resolve, reject) => {
+    //判断是否获得了用户地理位置授权
+    wx.getSetting({
+      success: (res) => {
+        if (!res.authSetting['scope.userLocation']) {
+          wx.showModal({
+            content: '检测到您没打开定位权限，地图功能将无法使用，是否去设置打开？',
+            confirmText: "确认",
+            cancelText: "取消",
+            success: function (res) {
+              console.log(res);
+              //点击“确认”时打开设置页面
+              if (res.confirm) {
+                console.log('用户点击确认')
+                wx.openSetting({
+                  success: (res) => {}
+                })
+              } else {
+                wx.showToast({
+                  title: '获取城市失败', //提示文字
+                  duration: 2000, //显示时长
+                  mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+                  icon: 'none', //图标，支持"success"、"loading"  
+                  success: function () {}, //接口调用成功
+                  fail: function () {}, //接口调用失败的回调函数  
+                  complete: function () {} //接口调用结束的回调函数  
+                })
+                console.log('用户点击取消')
+              }
+            }
+          });
+          reject();
+        } else{
+          resolve();
+        }
+      }
+    })
+  })
   }
+
 }
 export default tools;

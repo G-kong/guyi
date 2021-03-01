@@ -1,6 +1,6 @@
 <!--pages/film/components/filminfo.wxml-->
 <cu-custom bgColor="film-head text-white" isBack="{{true}}">
-  <view slot="content">{{title}}</view>
+  <view class="text-cut" slot="content">{{title}}</view>
 </cu-custom>
 <scroll-view scroll-y class="scrollPage ">
   <view class="film-pic-bg flex padding-sm bg-white">
@@ -15,7 +15,7 @@
       <view class="text-xs text-cut-2">主演 {{ item.cast }}</view>
     </view>
   </view>
-  <com-adress></com-adress>
+  <com-adress filmId="{{id}}"></com-adress>
   <view class="padding align-center">
     <view class="text-center" style="color: #a2a2a2">已经到底了</view>
   </view>

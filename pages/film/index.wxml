@@ -1,14 +1,16 @@
 <!--pages/own/index.wxml-->
 <view class="film-page flex flex-direction align-center">
-  <cu-custom bgColor="film-head text-white" ><view slot="content">电影资讯</view></cu-custom> 
- <view class="width-vfull bg-white nav">
-  <view class="flex text-center">
-    <view bindtap="filmSelect" class="{{hotClass}}" data-type="hot" >热映电影
-    </view>
-    <view bindtap="filmSelect" class="{{soonClass}}" data-type="soon" >即将上映
+  <cu-custom bgColor="film-head text-white">
+    <view slot="content">电影资讯</view>
+  </cu-custom>
+  <view class="width-vfull bg-white nav">
+    <view class="flex text-center">
+      <view bindtap="filmSelect" class="{{hotClass}}" data-type="hot">热映电影
+      </view>
+      <view bindtap="filmSelect" class="{{soonClass}}" data-type="soon">即将上映
+      </view>
     </view>
   </view>
- </view>
   <view class="container flex-sub flex flex-direction" style="{{containerHeight}}">
     <view class="item-list flex-sub padding-lr">
       <!-- <com-demo  filmType="hot"></com-demo> -->

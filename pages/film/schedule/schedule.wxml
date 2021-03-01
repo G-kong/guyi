@@ -1,11 +1,11 @@
 <!--pages/film/schedule/schedule.wxml-->
 <cu-custom bgColor="film-head text-white" isBack="{{true}}">
-  <view slot="content">{{place}}</view>
+  <view class="text-cut" slot="content">{{cinemaName}}</view>
 </cu-custom>
 <view class="flex bg-white padding-top-sm padding-left-sm padding-bottom-sm justify-between align-center">
   <view class="padding-right-100">
-    <view class="font-text text-cut-1">{{place}}</view>
-    <view class="font-text-sm margin-top-sm text-cut-1">{{full}}</view>
+    <view class="font-text text-cut-1">{{cinemaName}}</view>
+    <view class="font-text-sm margin-top-sm text-cut-1">{{address}}</view>
   </view>
   <view class="flex align-center">
     <view class="margin-right">

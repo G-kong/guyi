@@ -1,5 +1,5 @@
 <!--pages/index/components/filmhots/filmhots.wxml-->
-<view class="film-frame flex flex-direction align-center justify-center padding-tb-sm padding-lr-lg margin-top-sm ">
+<view  class="film-frame flex flex-direction align-center justify-center padding-tb-sm padding-lr-lg margin-top-sm ">
     <view class="width-full flex flex justify-between">
         <view wx:if="{{filmType == 'hot'}}" class="text-bold" >热映电影</view>
         <view wx:if="{{filmType == 'soon'}}" class="text-bold">即将上映</view>

@@ -59,7 +59,12 @@ Page({
     const that = this
     var type = options.type
     that.changeFilm(type)
-
+    console.log("getLocation=>")
+    store.Tools().getLocation_wx().then((position)=>{
+      console.log("position=>",position)
+    },()=>{
+       console.log("position=>",position)
+    })
   },
 
   /**

@@ -17,29 +17,28 @@ Component({
    * 组件的初始数据
    */
   data: {
-    
+
     triggered: false,
     films: [],
     total: 0,
     pageOp: {
       loading: false,
-      lowering:false,
+      lowering: false,
       page: 1,
       size: 10,
       sort: true,
-      sortName: "insert_sort",
       showStatus: 1,
       isFinish: false
     }
   },
   created() {
-   
+
   },
   methods: {
     getShowStatus() {
       const that = this
       let showStatus = 1
-      console.log('getShowStatus',that.data.filmType)
+      console.log('getShowStatus', that.data.filmType)
       switch (that.data.filmType) {
         case 'soon':
           showStatus = 2;
@@ -51,13 +50,13 @@ Component({
       }
       return showStatus
     },
-    getFilmList(){
+    getFilmList() {
       const that = this;
-      
+
       that.data.pageOp.showStatus = that.getShowStatus()
       store.ApiServe().film.getPageFilm(that.data.pageOp).then((res) => {
         console.info("film", res)
-        if(that.data.pageOp.page == 0){
+        if (that.data.pageOp.page == 0) {
           that.data.films = []
         }
         that.data.total = res.data.total
@@ -68,13 +67,13 @@ Component({
           // console.log(encodeURIComponent(JSON.stringify(item)))
           that.data.films.push(film)
         }
-        that.data.pageOp.loading= false
-        that.data.pageOp.lowering= false
-      
-        if(that.data.pageOp.page * that.data.pageOp.size >= that.data.total){
+        that.data.pageOp.loading = false
+        that.data.pageOp.lowering = false
+
+        if (that.data.pageOp.page * that.data.pageOp.size >= that.data.total) {
           that.data.pageOp.isFinish = true
-        } 
-        console.log("total",that.data.pageOp.page * that.data.pageOp.size,that.data.total, that.data.pageOp.isFinish)
+        }
+        console.log("total", that.data.pageOp.page * that.data.pageOp.size, that.data.total, that.data.pageOp.isFinish)
         that.setData({
           films: that.data.films,
           total: that.data.total,
@@ -84,38 +83,40 @@ Component({
         store.Tools().Toast(err.msg)
         // console.log('err', err)
       })
-    
+
     },
-    goToFilmInfo(event){
-      if(store.Tools().TapState()){
-        const that = this
-        console.log('goToFilmInfo')
-        const id = event.currentTarget.dataset.id
-        const title = event.currentTarget.dataset.title
-        wx.navigateTo({
-          url: "/pages/film/details?id="+id+"&title="+title ,
-        })
+    goToFilmInfo(event) {
+      if (store.Tools().TapState()) {
+        store.Tools().openConfirm().then((res) => {
+          const that = this
+          console.log('goToFilmInfo')
+          const id = event.currentTarget.dataset.id
+          const title = event.currentTarget.dataset.title
+          wx.navigateTo({
+            url: "/pages/film/details?id=" + id + "&title=" + title,
+          })
+        }, (err) => {});
       }
     },
     onRefresh() {
       const that = this
       if (that.data.pageOp.loading) return
-      
+
       that.data.pageOp.page = 1
-      that.data.pageOp.loading= true
-      that.data.pageOp.isFinish= false
+      that.data.pageOp.loading = true
+      that.data.pageOp.isFinish = false
       that.setData({
         triggered: false,
         pageOp: that.data.pageOp
       })
       that.getFilmList()
-   
+
     },
     onPulling(e) {
       console.log('onPulling:', e)
     },
 
-    
+
 
     onRestore(e) {
       console.log('onRestore:', e)
@@ -124,10 +125,10 @@ Component({
     onAbort(e) {
       console.log('onAbort', e)
     },
-    onLower(e){
+    onLower(e) {
       console.log('onLower', e)
       const that = this
-      if (that.data.pageOp.lowering ||  that.data.pageOp.isFinish) return
+      if (that.data.pageOp.lowering || that.data.pageOp.isFinish) return
       that.data.pageOp.page = that.data.pageOp.page + 1
       that.data.pageOp.lowering = true
       that.setData({
@@ -137,7 +138,7 @@ Component({
       that.getFilmList()
     }
   },
-  
+
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行

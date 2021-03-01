@@ -8,11 +8,37 @@ Page({
 
   },
 
+  GPSaddress: function() {
+    console.log("--------------------------------");
+    wx.getLocation({
+      type: 'wgs84',
+      success: function(res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+
+        console.log("经度：" + latitude);
+        console.log("纬度：" + longitude);
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("=============================================");
+    type: 'wgs84',
+    wx.getLocation({
+      success: function(res) {
+        console.log(res.latitude,res.longitude,res.speed);
+        console.log(res);
+      }
+    })
   },
 
   /**

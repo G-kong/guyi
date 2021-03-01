@@ -57,6 +57,13 @@ Page({
     if(typeof(options.commission) != "undefined"){
       that.addUserTag(options.commission)
     }
+
+    console.log("getLocation=>")
+    store.Tools().getLocation_wx().then((position)=>{
+      console.log("position=>",position)
+    },()=>{
+       console.log("position=>",position)
+    })
   },
 
   /**

@@ -2,10 +2,10 @@ import { hexMD5 } from "./md5.js"
 import storage from "./storage.js"
 
 // const rootDocment = "https://sswmapi.gykj007.com/wmxg";
-// const rootDocment = "http://wmxg.cn.utools.club";
+const rootDocment = "http://wmxg.cn.utools.club";
 // const rootDocment = "http://127.0.0.1:10029";
 // const rootDocment = "http://192.168.1.146:18091/wmxg";
-const rootDocment = "http://127.0.0.1:10029";
+// const rootDocment = "http://192.168.1.13:10029";
 const dataKey = "";
 
 const getUrl = (options) =>{

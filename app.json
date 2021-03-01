@@ -24,7 +24,8 @@
     "pages/myteam/details/details",
     "pages/film/schedule/schedule",
     "pages/film/swiper/swiper",
-    "pages/film/cinema/cinema"
+    "pages/film/cinema/cinema",
+    "pages/film/lianxi/lianxii"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -44,5 +45,5 @@
   },
   "sitemapLocation": "sitemap.json",
 
-  "entryPagePath": "pages/film/details"
+  "entryPagePath": ""
 }

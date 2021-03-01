@@ -11,14 +11,14 @@
 </view>
 
 <view class="bg-white padding-top-xs">
-  <view wx:key="item" wx:for="{{address}}" data-place="{{item.placeName}}" data-full="{{item.fullAddress}}" bindtap="goToSchedule">
+  <view wx:key="item" wx:for="{{address}}" data-cinemaName="{{item.cinemaName}}" data-address="{{item.address}}" data-cinemaId="{{item.cinemaId}}" bindtap="goToSchedule">
     <view class="flex padding-sm justify-between align-center">
       <view class="margin-right-xl">
         <view class="font-text">{{item.cinemaName}}</view>
         <view class="font-text-sm">{{item.address}}</view>
       </view>
       <view class="margin-right-xl">
-        <view style="color: #a2a2a2">{{item.cinemaId}}</view> 
+        <view style="color: #a2a2a2">{{item.distance}}</view> 
       </view>
     </view>
     <view class="margin-top-xs margin-bottom-xs">

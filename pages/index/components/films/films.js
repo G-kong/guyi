@@ -24,7 +24,6 @@ Component({
       page: 1,
       size: 6,
       sort: true,
-      sortName: "insert_sort",
       showStatus: 1
     }
   },
@@ -50,7 +49,7 @@ Component({
       const that = this
       that.data.pageOp.showStatus = that.getShowStatus()
       store.ApiServe().film.getPageFilm(that.data.pageOp).then((res) => {
-      // store.ApiServe().film.getHotList(that.data.pageOp).then((res) => {
+        // store.ApiServe().film.getHotList(that.data.pageOp).then((res) => {
         console.info("film", res)
         that.data.films = []
         that.data.total = res.data.total
@@ -69,30 +68,37 @@ Component({
     },
     goToFilm() {
       if (store.Tools().TapState()) {
-        const that = this
-        wx.redirectTo({
-          url: "/pages/film/index?type="+that.data.filmType,
-          success(res) {
-            // let page = getCurrentPages().pop();
-            // if (page == undefined || page == null) {
-            //   return
-            // }
-            // page.onLoad();
-          }
-        })
+        store.Tools().openConfirm().then((res) => {
+          const that = this
+          wx.redirectTo({
+            url: "/pages/film/index?type=" + that.data.filmType,
+            success(res) {
+              // let page = getCurrentPages().pop();
+              // if (page == undefined || page == null) {
+              //   return
+              // }
+              // page.onLoad();
+            }
+          })
+        }, (err) => {});
       }
     },
-    goToFilmInfo(event){
-      if(store.Tools().TapState()){
-        const that = this
-        console.log('goToFilmInfo')
-        const id = event.currentTarget.dataset.id
-        const title = event.currentTarget.dataset.title
-        wx.navigateTo({
-          url: "/pages/film/details?id="+id+"&title="+title ,
-        })
+    goToFilmInfo(event) {
+      if (store.Tools().TapState()) {
+        store.Tools().openConfirm().then((res) => {
+          const that = this
+          console.log('goToFilmInfo')
+          const id = event.currentTarget.dataset.id
+          const title = event.currentTarget.dataset.title
+          wx.navigateTo({
+            url: "/pages/film/details?id=" + id + "&title=" + title,
+          })
+        }, (err) => {})
+
       }
+
     }
+
   },
   lifetimes: {
     attached: function () {

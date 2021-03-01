@@ -1,5 +1,6 @@
 // pages/film/schedule/schedule.js
 const store = getApp().globalData;
+const film = store.ApiServe().film;
 Page({
 
   /**
@@ -7,11 +8,13 @@ Page({
    */
   data: {
     swiperCurrent:7,
-    place: '',
-    full: '',
+    cinemaName: "",
+    address: "",
+    cinemaId: "",
     circular: true,
     tapCut: 0,
     fiveDays: [],
+    filmScheduleList: [],
     swiperList: [{
       id: 0,
       type: 'image',
@@ -148,10 +151,11 @@ Page({
     console.log("options",options)
     const that = this;
     that.setData({
-      place: options.place,
-      full: options.full
+      cinemaName: options.cinemaName,
+      address: options.address,
+      cinemaId: options.cinemaId
     });
-    that.purchDate();
+    that.getScheduleList();
   },
 
 
@@ -202,5 +206,24 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 具体影院的场次排期
+   */
+  getScheduleList: function() {
+    const that = this;
+    film.getScheduleList({
+      cinemaId: 449
+    }).then((resp) => {
+      console.log(resp.data);
+      that.setData({
+        filmScheduleList: resp.data,
+      })
+      console.log("filmScheduleList：" + that.data.filmScheduleList);
+    },(err) => {
+      store.Tools().Toast(err.msg)
+        // console.log('err', err)
+    })
   }
 })

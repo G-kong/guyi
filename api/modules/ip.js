@@ -22,5 +22,24 @@ const ip = {
     params,
     cache: 60
   }),
+  //用户ip
+  getIp: (params) => request({
+    url: '/applet/getIp',
+    method: 'get',
+    params,
+    cache: 60
+  }),
+  //获取访问地图的ak
+  getMapAk: (params) => request({
+    url: '/applet/getMapAk',
+    method: 'get',
+    params
+  }),
+  //通过名称获取城市id
+  getCityIdByName: (params) => request({
+    url: '/applet/getCityIdByName',
+    method: 'get',
+    params
+  })
 }
 export default ip;

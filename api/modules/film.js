@@ -32,6 +32,12 @@ const film = {
       data,header: {
         'content-type': 'application/json'
       }
+    }),
+    //具体影院的场次排期
+    getScheduleList: (params) => request({
+      url: '/applet/getScheduleList',
+      method: 'get',
+      params
     })
   }
 

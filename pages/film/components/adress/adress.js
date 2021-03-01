@@ -1,10 +1,22 @@
 // pages/film/components/adress/adress.js
 const store = getApp().globalData;
 const film = store.ApiServe().film;
+const ip = store.ApiServe().ip;
 Component({
   options: {
     addGlobalClass: true,
   },
+
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    filmId: {
+      type: String,
+      default: ""
+    }
+  },
+
   /**
    * 组件的初始数据
    */
@@ -12,10 +24,16 @@ Component({
     tapCut: 0,
     date: [],
     showList: [],
-    address: []
+    address: [],
+    latitude: 0,
+    longitude: 0,
+    ip: "",
+    mapAk: "",
+    cityName: "",
+    cityId: ""
   },
   created() {
-    this.mapViewTap();
+    
   },
 
   methods: {
@@ -23,23 +41,100 @@ Component({
       const that = this;
       that.setData({
         tapCut: e.currentTarget.dataset.id,
+        address: that.data.showList[e.currentTarget.dataset.id]
       })
       // console.log(that.data.tapCut);
-      for (let i in that.data.showList) {
-        if (i == that.data.tapCut) {
-          that.setData({
-            address: that.data.showList[i],
-          })
-        }
-      }
     },
 
     goToSchedule: function (event) {
-      const place = event.currentTarget.dataset.place;
-      const full = event.currentTarget.dataset.full;
-      console.log("place:" + place + " full:" + full);
+      console.log(event.currentTarget.dataset + "==============================");
+      const cinemaName = event.currentTarget.dataset.cinemaname;
+      const address = event.currentTarget.dataset.address;
+      const cinemaId = event.currentTarget.dataset.cinemaid;
+      console.log("cinemaName:" + cinemaName + " address:" + address + "cinemaId:" + cinemaId);
       wx.navigateTo({
-        url: './schedule/schedule?place=' + place + '&full=' + full,
+        url: './schedule/schedule?cinemaName=' + cinemaName + '&address=' + address + '&cinemaId=' + cinemaId,
+      })
+    },
+
+    /**
+     * 获取用户ip
+     * @param {*} body 
+     */
+    getIp: function(params) {
+      const that = this;
+      ip.getIp({
+
+      }).then((resp) => {
+        // console.log("用户IP：" + resp.data);
+        that.setData({
+          ip: resp.data
+        })
+        that.mapViewTap();
+        that.getMapAk();
+      },(err) => {
+        store.Tools().Toast(err.msg)
+        // console.log('err', err)
+      })
+    },
+
+    /**
+     * 获取访问地图的ak
+     * @param {*} body 
+     */
+    getMapAk: function() {
+      const that = this;
+      ip.getMapAk({
+
+      }).then((resp) => {
+        // console.log("地图的AK：" + resp.data);
+        that.setData({
+          mapAk: resp.data
+        })
+        that.baidu_location();
+      },(err) => {
+        store.Tools().Toast(err.msg)
+        // console.log('err', err)
+      })
+    },
+
+    /**
+     * 获取城市名
+     * @param {*} body 
+     */
+    baidu_location: function() {
+      const that = this;
+      ip.baidu_location({
+        ip: that.data.ip,
+        ak: that.data.mapAk,
+      }).then((resp) => {
+        // console.log("城市：" + resp.content.address_detail.city);
+        that.setData({
+          cityName: resp.content.address_detail.city
+        })
+        that.getCityIdByName();
+      },(err) => {
+        store.Tools().Toast(err.msg)
+        // console.log('err', err)
+      })
+    },
+
+    /**
+     * 通过名称获取城市id
+     */
+    getCityIdByName: function() {
+      const that = this;
+      ip.getCityIdByName({
+        cityName: that.data.cityName,
+      }).then((resp) => {
+        // console.log("城市ID：" + resp.data);
+        that.setData({
+          cityId: resp.data
+        })
+        that.getFilmShowList();
+      },(err) => {
+        store.Tools().Toast(err.msg)
+        // console.log('err', err)
       })
     },
 
@@ -50,10 +145,12 @@ Component({
     getFilmShowList: function(body) {
       const that = this;
       film.getFilmShowList({
-        filmId: 123031,
-        cityId: 14
+        filmId: that.data.filmId,
+        cityId: that.data.cityId,
+        latitude: that.data.latitude,
+        longitude: that.data.longitude
       }).then((resp) => {
-        console.log("获取某电影的电影院" + resp.data);
+        // console.log("获取某电影的电影院" + resp.data);
         var days = [];
         var show = [];
         for (let i in resp.data) {
@@ -65,8 +162,8 @@ Component({
           showList: show,
           address: show[0],
         })
-        console.log("date:" + that.data.date);
-        console.log("showList:" + that.data.showList);
+        // console.log("date:" + that.data.date);
+        // console.log("showList:" + that.data.showList);
       },(err) => {
         store.Tools().Toast(err.msg)
         // console.log('err', err)
@@ -74,20 +171,21 @@ Component({
     },
 
     mapViewTap: function() {
+      const that = this;
       wx.getLocation({
-        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-        success: function(res) {
-          console.log(res)
-          wx.openLocation({
-            latitude: res.latitude,
-            longitude: res.longitude,
-            scale: 28
+        type: 'wgs84',
+        success: (res) => {
+          var latitude = res.latitude;
+          var longitude = res.longitude;
+          // console.log("经度：" + latitude);
+          // console.log("纬度：" + longitude);
+          that.setData({
+            latitude: latitude,
+            longitude: longitude
           })
-          console.log("latitude:" + latitude);
-          console.log("longitude:" + longitude);
         }
       })
-    }
+    },
 
   },
     
@@ -95,8 +193,8 @@ Component({
     attached: function () {
       // 在组件实例进入页面节点树时执行
       const that = this;
-      console.log("获取某电影的电影院");
-      that.getFilmShowList();
+      that.getIp();
+      // console.log("获取某电影的电影院");
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行

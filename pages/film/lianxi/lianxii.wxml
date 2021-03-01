@@ -5,3 +5,5 @@
 	<view class='planDetail'>{{movie.startDate}} {{movie.startTime}}2021-02-25 20:20</view>
 	<!-- 使用时注释dom view class='about' 即可 .about css 在app.wxss中 -->
 </view>
+
+<button class="bg-red" bindtap="GPSaddress">获取经纬度</button>
