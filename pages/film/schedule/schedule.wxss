@@ -123,7 +123,7 @@
 
 .swiper {
 	display: block;
-	height: 500rpx;
+	height: 330rpx;
 	position: relative;
 }
 
@@ -138,7 +138,18 @@
 	height: 100%;
 	position: relative;
 	z-index: 1000;
-	margin: 40rpx 0 0;
+    margin: 40rpx 0 0;
+}
+
+.img-item-m {
+	display: inline-block;
+	border-bottom: none;
+	width: 180rpx;
+	height: 100%;
+	position: relative;
+	z-index: 1000;
+    margin: 30rpx 0 0;
+    /* margin-top: 30rpx; */
 }
 
 .img-border {

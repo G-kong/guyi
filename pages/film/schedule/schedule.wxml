@@ -18,37 +18,37 @@
 <view class='switcher'>
   <!-- <view class='triangle'></view> -->
   <swiper bindchange="handelSwpierChange" class='swiper' circular='{{circular}}'  display-multiple-items="3" previous-margin="270rpx" next-margin="-140rpx" current="{{swiperCurrent}}">
-      <block wx:for="{{swiperList}}" wx:key="*this">
+      <block wx:for="{{filmScheduleList}}" wx:key="index">
         <swiper-item class="swiper-item">
-            <view class="img-item">
-                <image class="{{swiperCurrent==item.id?'img-border':''}}" style="height: {{swiperCurrent==item.id?'265rpx':'260rpx'}}" src='{{item.url}}'></image>
+            <view class="{{swiperCurrent==index?'img-item-m':'img-item'}}" bindtap="getFilmId" data-index="{{index}}">
+                <image class="{{swiperCurrent==index?'img-border':''}}" style="height: {{swiperCurrent==index?'280rpx':'260rpx'}}" src='{{item.film.pic}}'></image>
             </view>
         </swiper-item>
       </block>
   </swiper>
-  <image src="{{swiperList[swiperCurrent].url}}" style="width:100%;height:100%;" class="backImg"></image>
+  <image src="{{filmScheduleList[swiperCurrent].film.pic}}" style="width:100%;height:100%;" class="backImg"></image>
 </view>
 
 <view class="bg-white padding-sm">
   <view class="flex padding-bottom-xs justify-center">
-    <view class="font-text-xl">{{film.name}}</view>
-    <view class="margin-left-sm font-sco">{{film.score}}</view>
+    <view class="font-text-xl">{{film.filmName}}</view>
+    <view class="margin-left-sm font-sco">{{film.grade}}分</view>
   </view>
   <view class="flex justify-center font-text-sm">
-    <view class="margin-right">{{film.time}}</view>
-    <view class="line-cut margin-right"></view>
-    <view class="margin-right">{{film.tyte}}</view>
-    <view class="line-cut margin-top-xs margin-right"></view>
-    <view class="margin-right">{{film.actor}}</view>
+    <view class="margin-right-sm">{{film.duration}}分钟</view>
+    <view class="line-cut margin-right-sm"></view>
+    <view class="margin-right-sm">{{film.filmTypes}}</view>
+    <view class="line-cut margin-top-xs margin-right-sm"></view>
+    <view class="margin-right-sm text-cut" style="width:238rpx;">{{film.cast}}</view>
   </view>
 </view>
 
 <view class="line-gary"></view>
 <view class="flex-sub film-intro bg-white">
   <view class="flex date-list">
-    <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="item" wx:for="{{fiveDays}}" bindtap="daySelect" data-id="{{index}}">
+    <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="index" wx:for="{{dateList}}" bindtap="daySelect" data-id="{{index}}">
       <view class="padding" style="{{index>=3?'margin-top: 5rpx':''}}">
-        {{fiveDays[index]}}
+        {{item}}
       </view>
       <view class="{{index==tapCut?'line' : ''}}"></view>
     </view>

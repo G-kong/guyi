@@ -7,133 +7,64 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperCurrent:7,
+    swiperCurrent: "",
     cinemaName: "",
     address: "",
     cinemaId: "",
     circular: true,
     tapCut: 0,
-    fiveDays: [],
     filmScheduleList: [],
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
-    }, {
-      id: 1,
-        type: 'image',
-        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
-    }, {
-      id: 7,
-      type: 'image',
-      url: 'https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg'
-    }],
-    film: {
-      id: 0,
-      name: "你好，李焕英",
-      score: "8.1分",
-      time: "128分钟",
-      tyte: "喜剧",
-      actor: "贾玲 / 张小斐 / 沈腾"
-    },
-    pieceList: [
-      {
-        id: "0",
-        startTime: "19:00",
-        endTime: "21:00散场",
-        language: "国语 2D",
-        fewNumber: "2号厅（请出示健康码,进场带口罩）",
-        money: "55.5元",
-        marPri: "市场价88.8元"
-      },
-      {
-        id: "1",
-        startTime: "8:00",
-        endTime: "11:00散场",
-        language: "国语 2D",
-        fewNumber: "3号厅（请出示健康码,进场带口罩）",
-        money: "33.5元",
-        marPri: "市场价88.8元"
-      },
-      {
-        id: "2",
-        startTime: "12:00",
-        endTime: "15:00散场",
-        language: "国语 3D",
-        fewNumber: "5号厅（请出示健康码,进场带口罩）",
-        money: "44.5元",
-        marPri: "市场价55.8元"
-      }
-    ]
+    film: {},
+    dateList: [],
+    films: [],
+    filmId: "",
+    scheduleList: [],
+    // films: {
+    //   id: 0,
+    //   name: "你好，李焕英",
+    //   score: "8.1分",
+    //   time: "128分钟",
+    //   tyte: "喜剧",
+    //   actor: "贾玲 / 张小斐 / 沈腾"
+    // },
+    // pieceList: [
+    //   {
+    //     id: "0",
+    //     startTime: "19:00",
+    //     endTime: "21:00散场",
+    //     language: "国语 2D",
+    //     fewNumber: "2号厅（请出示健康码,进场带口罩）",
+    //     money: "55.5元",
+    //     marPri: "市场价88.8元"
+    //   },
+    //   {
+    //     id: "1",
+    //     startTime: "8:00",
+    //     endTime: "11:00散场",
+    //     language: "国语 2D",
+    //     fewNumber: "3号厅（请出示健康码,进场带口罩）",
+    //     money: "33.5元",
+    //     marPri: "市场价88.8元"
+    //   },
+    //   {
+    //     id: "2",
+    //     startTime: "12:00",
+    //     endTime: "15:00散场",
+    //     language: "国语 3D",
+    //     fewNumber: "5号厅（请出示健康码,进场带口罩）",
+    //     money: "44.5元",
+    //     marPri: "市场价55.8元"
+    //   }
+    // ]
   },
 
   // current改变
   handelSwpierChange: function (e) {
-    this.setData({
-      swiperCurrent: e.detail.current,
-      imgUrl: this.data.swiperList[e.detail.current]
-    })
-  },
-
-  purchDate: function(e) {
     const that = this;
-    let time = store.Time().getTodayDate();
-    let date = store.Time().getDates(7, time);
-    console.log(date);
-
-    // var fiveDay = [{},{},{},{},{},{}];
-    var fiveDay = [];
-    for(let i in date) {
-      if (i < 6) {
-        switch (i) {
-          case '0':
-            // fiveDay[i].id = i;
-            fiveDay[i] = "今天" + date[i].time;
-            break;
-          case '1':
-            // fiveDay[i].id = i;
-            fiveDay[i] = "明天" + date[i].time;
-            break;
-          case '2':
-            // fiveDay[i].id = i;
-            fiveDay[i] = "后天" + date[i].time;
-            break;
-          case '3':
-          case '4':
-          case '5':
-            // fiveDay[i].id = i;
-            fiveDay[i] = ' ' + date[i].time;
-            break;
-          default:
-            break;
-        }
-      }
-    }
-    console.log(fiveDay);
     that.setData({
-      fiveDays: fiveDay
+      swiperCurrent: e.detail.current,
+      film: that.data.filmScheduleList[e.detail.current].film
     })
-    console.log(that.data.fiveDays)
   },
 
   daySelect: function(e) {
@@ -142,6 +73,19 @@ Page({
       tapCut: e.currentTarget.dataset.id,
     })
     // console.log(that.data.tapCut);
+  },
+
+  getFilmId: function(e) {
+    const that = this;
+    if(store.Tools().TapState()){
+      const cut_index = e.currentTarget.dataset.index
+      if(that.data.swiperCurrent != cut_index){
+        // console.log("index----------------------" + cut_index);
+        that.setData({
+          swiperCurrent: e.currentTarget.dataset.index,
+        })
+      }
+    }
   },
 
   /**
@@ -153,9 +97,11 @@ Page({
     that.setData({
       cinemaName: options.cinemaName,
       address: options.address,
-      cinemaId: options.cinemaId
+      cinemaId: options.cinemaId,
+      filmId: options.filmId
     });
     that.getScheduleList();
+    // that.getDateList();
   },
 
 
@@ -214,16 +160,61 @@ Page({
   getScheduleList: function() {
     const that = this;
     film.getScheduleList({
-      cinemaId: 449
+      cinemaId: that.data.cinemaId
     }).then((resp) => {
       console.log(resp.data);
       that.setData({
         filmScheduleList: resp.data,
       })
       console.log("filmScheduleList：" + that.data.filmScheduleList);
+      for (let i in resp.data) {
+        if (that.data.filmId == resp.data[i].filmId) {
+          that.setData({
+            swiperCurrent: i,
+          })
+        }
+      }
+      that.parseData();
     },(err) => {
       store.Tools().Toast(err.msg)
         // console.log('err', err)
     })
+  },
+
+  parseData: function() {
+    const that = this;
+    const list = [];
+    const dates = {filmId: "", date: []};
+    const datess = [];
+    const schedule = [];
+    const film = [];
+    const id = [];
+    for (let i in that.data.filmScheduleList) {
+      list[i] = that.data.filmScheduleList[i].dateList;
+      film[i] = that.data.filmScheduleList[i].film;
+      id[i] = that.data.filmScheduleList[i].filmId;
+    };
+    for (let i in list) {
+      var date = [];
+      for (let j in list[i]) {
+        console.log("list[" + i + "][" + j + "]：" + list[i][j].date);
+        date[j] = list[i][j].date;
+        dates.filmId = id[i];
+        dates.date = date; 
+        datess[i] = dates;
+      }
+      console.log("date:" + date);
+    };
+
+    console.log("dates：" + datess);
+   
+    that.setData({
+      dateList: date,
+      films: film,
+      filmId: id
+    })
+    console.log("dateList：" + that.data.dateList);
+    console.log("films：" + that.data.films);
+    console.log("filmId：" + that.data.filmId);
   }
 })
