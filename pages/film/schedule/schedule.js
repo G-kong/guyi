@@ -18,44 +18,7 @@ Page({
     dateList: [],
     films: [],
     filmId: "",
-    scheduleList: [],
-    // films: {
-    //   id: 0,
-    //   name: "你好，李焕英",
-    //   score: "8.1分",
-    //   time: "128分钟",
-    //   tyte: "喜剧",
-    //   actor: "贾玲 / 张小斐 / 沈腾"
-    // },
-    // pieceList: [
-    //   {
-    //     id: "0",
-    //     startTime: "19:00",
-    //     endTime: "21:00散场",
-    //     language: "国语 2D",
-    //     fewNumber: "2号厅（请出示健康码,进场带口罩）",
-    //     money: "55.5元",
-    //     marPri: "市场价88.8元"
-    //   },
-    //   {
-    //     id: "1",
-    //     startTime: "8:00",
-    //     endTime: "11:00散场",
-    //     language: "国语 2D",
-    //     fewNumber: "3号厅（请出示健康码,进场带口罩）",
-    //     money: "33.5元",
-    //     marPri: "市场价88.8元"
-    //   },
-    //   {
-    //     id: "2",
-    //     startTime: "12:00",
-    //     endTime: "15:00散场",
-    //     language: "国语 3D",
-    //     fewNumber: "5号厅（请出示健康码,进场带口罩）",
-    //     money: "44.5元",
-    //     marPri: "市场价55.8元"
-    //   }
-    // ]
+    scheduleList: []
   },
 
   // current改变
@@ -63,7 +26,10 @@ Page({
     const that = this;
     that.setData({
       swiperCurrent: e.detail.current,
-      film: that.data.filmScheduleList[e.detail.current].film
+      film: that.data.filmScheduleList[e.detail.current].film,
+      dateList: that.data.filmScheduleList[e.detail.current].dateList,
+      scheduleList: that.data.filmScheduleList[e.detail.current].dateList[0].scheduleList,
+      tapCut: 0
     })
   },
 
@@ -71,11 +37,11 @@ Page({
     const that = this;
     that.setData({
       tapCut: e.currentTarget.dataset.id,
+      scheduleList: that.data.filmScheduleList[that.data.swiperCurrent].dateList[e.currentTarget.dataset.id].scheduleList
     })
-    // console.log(that.data.tapCut);
   },
 
-  getFilmId: function(e) {
+  filmSelect: function(e) {
     const that = this;
     if(store.Tools().TapState()){
       const cut_index = e.currentTarget.dataset.index
@@ -92,7 +58,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("options",options)
+    // console.log("options",options)
     const that = this;
     that.setData({
       cinemaName: options.cinemaName,
@@ -159,14 +125,15 @@ Page({
    */
   getScheduleList: function() {
     const that = this;
-    film.getScheduleList({
+    film.getScheduleList({ 
       cinemaId: that.data.cinemaId
+      // cinemaId: 426
     }).then((resp) => {
-      console.log(resp.data);
+      // console.log(resp.data);
       that.setData({
         filmScheduleList: resp.data,
       })
-      console.log("filmScheduleList：" + that.data.filmScheduleList);
+      // console.log("filmScheduleList：" + that.data.filmScheduleList);
       for (let i in resp.data) {
         if (that.data.filmId == resp.data[i].filmId) {
           that.setData({
@@ -174,47 +141,25 @@ Page({
           })
         }
       }
-      that.parseData();
+      // that.parseData();
     },(err) => {
       store.Tools().Toast(err.msg)
         // console.log('err', err)
     })
   },
 
-  parseData: function() {
+  goToCinema: function(event) {
+    // console.log("event:" + event.currentTarget.dataset.schedule);
     const that = this;
-    const list = [];
-    const dates = {filmId: "", date: []};
-    const datess = [];
-    const schedule = [];
-    const film = [];
-    const id = [];
-    for (let i in that.data.filmScheduleList) {
-      list[i] = that.data.filmScheduleList[i].dateList;
-      film[i] = that.data.filmScheduleList[i].film;
-      id[i] = that.data.filmScheduleList[i].filmId;
-    };
-    for (let i in list) {
-      var date = [];
-      for (let j in list[i]) {
-        console.log("list[" + i + "][" + j + "]：" + list[i][j].date);
-        date[j] = list[i][j].date;
-        dates.filmId = id[i];
-        dates.date = date; 
-        datess[i] = dates;
-      }
-      console.log("date:" + date);
-    };
-
-    console.log("dates：" + datess);
-   
-    that.setData({
-      dateList: date,
-      films: film,
-      filmId: id
+    const cinemaName = that.data.cinemaName;
+    const film = encodeURIComponent(JSON.stringify(that.data.film));
+    const schedule = encodeURIComponent(JSON.stringify(event.currentTarget.dataset.schedule));
+    const date = that.data.dateList[that.data.tapCut].date;
+    console.log("=============" + cinemaName + "===" + film + "===" + schedule + "===" + date);
+    console.log("goToCinema");
+    wx.navigateTo({
+      url: '/pages/film/cinema/cinema?cinemaName=' + cinemaName + '&film=' + film + '&schedule=' + schedule + '&date=' + date
     })
-    console.log("dateList：" + that.data.dateList);
-    console.log("films：" + that.data.films);
-    console.log("filmId：" + that.data.filmId);
   }
+
 })

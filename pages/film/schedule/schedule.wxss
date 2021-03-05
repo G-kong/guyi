@@ -135,7 +135,7 @@
 	display: inline-block;
 	border-bottom: none;
 	width: 160rpx;
-	height: 100%;
+	/* height: 100%; */
 	position: relative;
 	z-index: 1000;
     margin: 40rpx 0 0;
@@ -145,7 +145,7 @@
 	display: inline-block;
 	border-bottom: none;
 	width: 180rpx;
-	height: 100%;
+	/* height: 100%; */
 	position: relative;
 	z-index: 1000;
     margin: 30rpx 0 0;

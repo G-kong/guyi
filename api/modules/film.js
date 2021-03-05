@@ -38,7 +38,22 @@ const film = {
       url: '/applet/getScheduleList',
       method: 'get',
       params
+    }),
+    //具体场次的座位
+    getSeatList: (params) => request({
+      url: '/applet/getSeatList',
+      method: 'get',
+      params
+    }),
+
+    createMiniOrder: (params) => request({
+      url: '/film/createMiniOrder',
+      method: 'post',
+      data,header: {
+        'content-type': 'application/json'
+      }
     })
+
   }
 
   export default film;

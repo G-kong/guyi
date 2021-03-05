@@ -1,17 +1,87 @@
-<!--pages/film/cinema/cinema.wxml-->
+<!--电影信息-->
 <cu-custom bgColor="film-head text-white" isBack="{{true}}">
-  <view class="text-cut" slot="content">福州仓山万达广场店</view>
+  <view class="text-cut" slot="content">{{cinemaName}}</view>
 </cu-custom>
-
-<view class="bg-white padding">
-  <view>你好，李焕英</view>
-  <view class="flex padding-top-xs">
-    <view class="margin-right-sm">2021-02-28</view>
-    <view class="margin-right-sm">22:00~00:22</view>
-    <view>(中文 2D)</view>
-  </view>
+<view class='info'>
+	<view class='movieName'>{{movie.filmName}}</view>
+	<view class='planDetail'>
+		<text decode="{{true}}">{{movie.date}}&emsp;{{movie.showTime}}~{{movie.showEndTime}}&emsp;({{movie.showVersionType}})</text>
+	</view>
+	<!-- 使用时注释dom view class='about' 即可 .about css 在app.wxss中 -->
 </view>
-
-<view class="align-center bg-color">
-  <view>5号厅</view>
+<!--座位示例图  -->
+<view class="seatDemosBack" wx:if="{{loadComplete}}">
+	<view class="seatDemos">
+		<block wx:for="{{seatTypeList}}" wx:for-index="index" wx:for-item="seatTypeItem" wx:key="index">
+			<view class="seatDemo">
+				<image class="seatDemoItem" mode="widthFix" src="{{seatTypeItem.icon}}"></image>
+				<view class="seatDemoItem name"> {{seatTypeItem.name}}</view>
+			</view>
+		</block>
+	</view>
+</view>
+<movable-area scale-area="true" class="defaultArea" style="height:{{seatArea}}px; width: 750rpx;">
+  <view class='hallName'>
+		<text>{{movie.hallName}}</text>
+  </view>
+	<movable-view class='movableOne' bindscale="handleScale" style="height:{{seatArea}}px; width: 750rpx;" scale="true" direction="all" scale-max="2" scale-min="1" scale-value="2" out-of-bounds="true" x="-200" y="100">
+		<view class='seatArea' id="seatView" style='width:{{seatScaleHeight * maxX}}px;height:{{seatScaleHeight * maxY}}px'>
+			
+      <view class='hallLine' ></view>
+			<view class='x' wx:for="{{seats}}" wx:key="keys" wx:for-item="rows" wx:for-index="idx">
+        <view class='y' wx:for="{{rows}}" wx:key="items" wx:for-index="idy" wx:for-item="col" 
+        style="position: absolute; left:{{(col.columnNo-1)* seatScaleHeight}}px;top:{{(col.rowNo-1) * seatScaleHeight}}px;width: {{seatScaleHeight}}px;height: {{seatScaleHeight}}px">
+ 
+          <image wx:if="{{col.status!='N' && col.status!='LK'}}" class="imgBase" src='{{col.icon}}' 
+          data-seatId='{{col.seatId}}' data-flag="{{col.flag}}" data-columnNo='{{col.columnNo}}' data-rowNo='{{col.rowNo}}' data-seatNo='{{col.seatNo}}'></image>
+					<image wx:elif="{{col.status=='LK'}}" class="imgBase" src='{{col.icon}}'></image>
+          <image wx:elif="{{col.status=='N'}}" class="imgBase" bind:tap='selectSeat' src='{{col.icon}}' 
+          data-seatId='{{col.seatId}}'  data-flag="{{col.flag}}" data-columnNo='{{col.columnNo}}' data-rowNo='{{col.rowNo}}' data-seatNo='{{col.seatNo}}'></image>
+ 
+				</view>
+			</view>
+		</view>
+	</movable-view>
+</movable-area>
+ 
+ 
+<!--下部分座位示例图  -->
+<!-- 用户选中的座位详情 -->
+<view class='selectSeatInfo' hidden='{{hidden}}'>
+	<scroll-view class="scrollSeat" scroll-x style="width: 100%">
+		<!-- 普通座位 -->
+		<block wx:for="{{selectedSeat}}" wx:key="id" wx:for-item="selectedSeatItem">
+			<view class='scrollItem' bindtap='cancelSeat' data-columnNo='{{selectedSeatItem.columnNo}}' data-rowNo='{{selectedSeatItem.rowNo}}'>
+				<view class='scrollTextTop'>
+					{{selectedSeatItem.seatNo}}
+				</view>
+				<view class='scrollTextBottom'>
+					￥{{price}}
+				</view>
+				<image src='/assets/images/close.png'></image>
+			</view>
+		</block>
+	</scroll-view>
+</view>
+<!-- 快速选座 -->
+<view class='selectSeatInfo' hidden='{{!hidden}}'>
+	<scroll-view class="scrollSeat" scroll-x style="width: 100%">
+		<view class='quickItem' bindtap='quickSeat' data-num='1'>
+			1人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='2'>
+			2人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='3'>
+			3人座
+		</view>
+		<view class='quickItem' bindtap='quickSeat' data-num='4'>
+			4人座
+		</view>
+	</scroll-view>
+</view>
+<!-- 以下是确认选座 -->
+<view class='orderComfirm' style="flex-direction:row;">
+	<view class='comfirm' bindtap='confirmHandle'>￥
+		<text>{{totalPrice}}</text> 元 确认选座</view>
 </view>

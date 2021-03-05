@@ -20,7 +20,7 @@
   <swiper bindchange="handelSwpierChange" class='swiper' circular='{{circular}}'  display-multiple-items="3" previous-margin="270rpx" next-margin="-140rpx" current="{{swiperCurrent}}">
       <block wx:for="{{filmScheduleList}}" wx:key="index">
         <swiper-item class="swiper-item">
-            <view class="{{swiperCurrent==index?'img-item-m':'img-item'}}" bindtap="getFilmId" data-index="{{index}}">
+            <view class="{{swiperCurrent==index?'img-item-m':'img-item'}}" bindtap="filmSelect" data-index="{{index}}">
                 <image class="{{swiperCurrent==index?'img-border':''}}" style="height: {{swiperCurrent==index?'280rpx':'260rpx'}}" src='{{item.film.pic}}'></image>
             </view>
         </swiper-item>
@@ -47,8 +47,9 @@
 <view class="flex-sub film-intro bg-white">
   <view class="flex date-list">
     <view class="cu-item {{index==tapCut?'text-red' : ''}}" wx:key="index" wx:for="{{dateList}}" bindtap="daySelect" data-id="{{index}}">
-      <view class="padding" style="{{index>=3?'margin-top: 5rpx':''}}">
-        {{item}}
+      <!-- <view class="padding" style="{{index>=3?'margin-top: 5rpx':''}}"> -->
+      <view class="padding">
+        {{item.date}}
       </view>
       <view class="{{index==tapCut?'line' : ''}}"></view>
     </view>
@@ -56,20 +57,20 @@
 </view>
 
 <view class="bg-white">
-  <view wx:for="{{pieceList}}" wx:key="index" wx:for-item="picec">
+  <view wx:for="{{scheduleList}}" wx:key="index" wx:for-item="schedule" bindtap="goToCinema" data-schedule="{{schedule}}">
     <view class="margin-left-20 line-gary"></view>
     <view class="flex align-center padding-bottom-sm">
       <view class="padding-left-sm padding-top">
-        <view class="font-text-xl">{{picec.startTime}}</view>
-        <view class="font-text-sm margin-top-xs" style="width: 120rpx">{{picec.endTime}}</view>
+        <view class="font-text-xl">{{schedule.showTime}}</view>
+        <view class="font-text-sm margin-top-xs" style="width: 120rpx">{{schedule.showEndTime}} 散场</view>
       </view>
       <view class="padding-top-sm margin-left-xl">
-        <view class="">{{picec.language}}</view>
-        <view class="text-cut-1 font-text-sm margin-top-sm">{{picec.fewNumber}}</view>
+        <view class="">{{schedule.showVersionType}}</view>
+        <view class="text-cut-1 font-text-sm margin-top-sm" style="width:216rpx;">{{schedule.hallName}}</view>
       </view>
       <view class="padding-top-sm margin-left" style="width: 368rpx">
-        <view class="flex justify-end font-text-mn">{{picec.money}}</view>
-        <view class="flex justify-end font-text-sm margin-top-xs" style="text-decoration:line-through;">{{picec.marPri}}</view>
+        <view class="flex justify-end font-text-mn">{{schedule.discountPrice}}元</view>
+        <view class="flex justify-end font-text-sm margin-top-xs" style="text-decoration:line-through;">市场价{{schedule.netBigPrice}}元</view>
       </view>
       <view class="margin-right-sm margin-left-sm">
         <view class="margin-top-sm cu-vw round bg-red">特惠购票</view>

@@ -48,7 +48,7 @@ Component({
 
     goToSchedule: function (event) {
       const that = this;
-      console.log(event.currentTarget.dataset + "==============================");
+      // console.log(event.currentTarget.dataset + "==============================");
       const cinemaName = event.currentTarget.dataset.cinemaname;
       const address = event.currentTarget.dataset.address;
       const cinemaId = event.currentTarget.dataset.cinemaid;

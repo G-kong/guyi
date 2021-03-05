@@ -25,7 +25,10 @@
     "pages/film/schedule/schedule",
     "pages/film/swiper/swiper",
     "pages/film/cinema/cinema",
-    "pages/film/lianxi/lianxii"
+    "pages/film/lianxi/lianxii",
+    "pages/film/lianxi/lianxiim",
+    "pages/place/place",
+    "pages/film/payment/payment"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,5 +48,5 @@
   },
   "sitemapLocation": "sitemap.json",
 
-  "entryPagePath": ""
+  "entryPagePath": "pages/film/payment/payment"
 }

@@ -1,0 +1,89 @@
+<!--pages/film/payment/payment.wxml-->
+<!-- <view class="bg-red" bindtap="pay">点击</view> -->
+<cu-custom bgColor="film-head text-white" isBack="{{true}}">
+  <view class="text-cut" slot="content">支付订单</view>
+</cu-custom>
+
+<view class="container">
+  <view class="padding-top-xl padding-lr">
+    <view class="bg-white padding-top-sm padding-left-sm border-radius-pay">
+      <view class="flex">
+        <image class="margin-right img-item" src="https://gw.alicdn.com/i2/O1CN01cCbKPv1rhFBSyNqNc_!!6000000005662-0-alipicbeacon.jpg_480x480Q30s150.jpg"></image>
+        <view class="margin-left align-center">
+          <view class="margin-bottom">你好，李焕英</view>
+          <view class="margin-bottom-sm">2021-03-25 18:59 中文 2D</view>
+          <view class="margin-bottom-sm" style="width: 255px;">中影国际影城福州五四北泰禾广场店哈哈士大夫安华福萨电话福安市分行</view>
+          <view>7号厅 13排16座,13排14座,13排15座,13排15座</view>
+        </view>
+      </view>
+      <view class="flex margin-top justify-between">
+        <view class="flex">
+          <view class="flex text-red">
+            <text class="cuIcon-roundclosefill" style="font-size: 36rpx;"></text>
+            <text class="margin-left-xs">不支持退票</text>
+          </view>
+          <view class="flex text-red margin-left">
+            <text class="cuIcon-roundclosefill" style="font-size: 36rpx;"></text>
+            <text class="margin-left-xs">不支持改签</text>
+          </view>
+        </view>
+        <view class="margin-right-sm">4张 原价 ￥888.8</view>
+      </view>
+      <view class="margin-top-sm">
+        <view class="line-cut"></view>
+      </view>
+      <view class="flex justify-between margin-top">
+        <view>优惠</view>
+        <view class="margin-right-sm text-red">-9.9</view>
+      </view>
+      <view class="margin-top">
+        <view class="line-cut"></view>
+      </view>
+      <view class="flex justify-between margin-top padding-bottom-sm">
+        <view>票价合计</view>
+        <view class="margin-right-sm text-red">￥666.6</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="padding-lr">
+    <view class="margin-top bg-white border-radius-pay">
+      <view class="flex margin-left-sm">
+        <view class="margin-right-xl margin-top-lg">手机号码</view>
+        <input class="weui-input margin-top-lg" name="input" placeholder="必填" />
+      </view>
+      <view class="margin-top-sm margin-left-sm">
+        <view class="line-cut"></view>
+      </view>
+      <view class="margin-top-sm margin-left-sm padding-bottom-sm">仅用于出票异常联系，取票码不会通过短信发送</view>
+    </view>
+  </view>
+
+  <view class="padding-lr">
+    <view class="bg-white margin-top border-radius-pay">
+      <view class="flex justify-between">
+        <view class=" margin-left-sm margin-top-lg">无座位时，接收系统调座</view>
+        <switch class="sm margin-top margin-right" bindchange="SetShadow"></switch>
+      </view>
+      <view class="margin-top-sm margin-left-sm">
+        <view class="line-cut"></view>
+      </view>
+      <view class="margin-sm padding-bottom-sm">
+        <view class="margin-bottom-sm">1. 接收调座，当您选择的座位已售出时，自动为您选择最佳观影座位。</view>
+        <view>2. 若不接受调座则出票率较低，请谨慎选择。</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="padding-lr">
+    <view class="bg-white margin-top border-radius-pay">
+      <view class="flex justify-between">
+        <view class="margin-left-sm padding-top">购票须知</view>
+        <radio-group name="radio">
+          <label><radio/></label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+
+</view>
